@@ -20,6 +20,15 @@ class WebPelayananMedis extends CI_Controller {
 		$this->load->view('include/footer');
 		$this->load->view('include/thirdpart');
 	}
+
+	function indexAlurHD(){
+		$this->load->view('include/head');
+		$this->load->view('include/header');
+		$this->load->view('include/sidebar');
+		$this->load->view('page/PelayananMedis/AlurHD');
+		$this->load->view('include/footer');
+		$this->load->view('include/thirdpart');
+	}
 ///////////////////////////IGD/////////////////////////////////////////////// 
 	function indexIGD(){
 		$this->load->view('include/head');

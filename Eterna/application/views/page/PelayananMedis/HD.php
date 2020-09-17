@@ -109,7 +109,8 @@
 							<h3 class="sidebar-title">Berkaitan</h3>
 							<div class="sidebar-item categories">
 								<ul>
-									<li><a href="#">-</a></li>
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><font style="color: #28a745">Hemodialisis </font></a></li>
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurHD";?>">Alur Pelayanan Hemodialisis  </a></li>
 								</ul>
 							</div>
 							<h3 class="sidebar-title">Pelayanan Medis</h3>

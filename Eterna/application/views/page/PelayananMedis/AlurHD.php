@@ -9,7 +9,7 @@
 					<li><a href="<?php echo base_url()."index.php/WebHome";?>">Home</a></li>
 					<li><a href="#">Pelayanan Medis</a></li>
 				</ol>
-				<h2>Medical Check Up</h2>
+				<h2>Alur Pelayanan Hemodialisis</h2>
 			</div>
 		</section>
 		<!-- ======= Blog Section ======= -->
@@ -26,20 +26,20 @@
 						    {
 						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_mcu WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+						    $result = mysqli_query($con,"SELECT * FROM tb_hd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 						    if(mysqli_num_rows($result)>0){
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
 							<?php
-							if ($row['link_mcu']==NULL) {
+							if ($row['link_hd']==NULL) {
 							?>
 								<img src="<?php echo base_url('assets/images/empty/img-empty.png');?>" alt="" class="img-fluid">
 							<?php
 							}else{
 							?>
-								<img src="<?php echo base_url('assets/images/rumah-sakit/MCU/'.$row['link_mcu']);?>" alt="" class="img-fluid">
+								<img src="<?php echo base_url('assets/images/rumah-sakit/hd/'.$row['link_hd']);?>" alt="" class="img-fluid">
 							<?php } ?>
 							<?php } } mysqli_close($con); ?>
 							</div>
@@ -52,13 +52,13 @@
 						    {
 						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_mcu WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+						    $result = mysqli_query($con,"SELECT * FROM tb_hd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 						    if(mysqli_num_rows($result)>0){
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
-								<a href=""><?php echo $row['judul_mcu']; ?></a>
+								<a href=""><?php echo $row['judul_hd']; ?></a>
 							<?php } } mysqli_close($con); ?>
 							</h2>
 							<div class="entry-content">
@@ -68,13 +68,13 @@
 						    {
 						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_mcu WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+						    $result = mysqli_query($con,"SELECT * FROM tb_hd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 						    if(mysqli_num_rows($result)>0){
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
-							<?php echo $row['isi_mcu']; ?>
+							<?php echo $row['isi_hd']; ?>
 							<?php } } mysqli_close($con); ?>
 							</div>
 							<div class="entry-footer clearfix">
@@ -85,8 +85,7 @@
 									</ul>
 									<i class="icofont-tags"></i>
 									<ul class="tags">
-										<li><a href="#">MCU</a></li>
-										<li><a href="#">Medical Check Up</a></li>
+										<li><a href="#">Alur Pelayanan Hemodialisis</a></li>
 									</ul>
 								</div>
 								<div class="float-right share">
@@ -110,20 +109,20 @@
 							<h3 class="sidebar-title">Berkaitan</h3>
 							<div class="sidebar-item categories">
 								<ul>
-									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexMCU";?>"><font style="color: #28a745">Medical Check Up</font></a></li>
-									<!-- <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurMCU";?>">Alur Pelayanan Medical Check Up</a></li> -->
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>">Hemodialisis </a></li>
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><font style="color: #28a745">Alur Pelayanan Hemodialisis </font></a></li>
 								</ul>
 							</div>
 							<h3 class="sidebar-title">Pelayanan Medis</h3>
 							<div class="sidebar-item categories">
 								<ul>
-									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>">Hemodialisis </a></li>
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><font style="color: #28a745">Hemodialisis </font></a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexIGD";?>">Instalasi Gawat Darurat (IGD) </a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexRJ";?>">Instalasi Rawat Jalan</a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexRI";?>">Instalasi Rawat Inap</a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexCAPD";?>">CAPD</a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>">Pelyanan Bedah</a></li>
-									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexMCU";?>"><font style="color: #28a745">Medical Check Up</font></a></li>
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexMCU";?>">Medical Check Up</a></li>
 								</ul>
 							</div>
 							<h3 class="sidebar-title">Kontak Kami</h3>

@@ -78,7 +78,16 @@
           <span>Pelayanan Medis</span>
         </a>
         <ul class="sub-menu">
-          <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexHD";?>">Hemodialisa</a></li>
+          <li class="has-sub">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              Hemodialisa
+            </a>
+            <ul class="sub-menu">
+              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexHD";?>">Tampilan Hemodialisis</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurHD";?>">Alur Hemodialisis</a></li>
+            </ul>
+          </li>
           <li class="has-sub">
             <a href="javascript:;">
               <b class="caret"></b>
@@ -123,7 +132,9 @@
               <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurCAPD";?>">Alur CAPD</a></li>
             </ul>
           </li>
-          <li class="has-sub">
+          <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexBedah";?>">Pelayanan Bedah</a></li>
+          <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexMCU";?>">Medical Check Up</a></li>
+          <!-- <li class="has-sub">
             <a href="javascript:;">
               <b class="caret"></b>
               Bedah
@@ -142,7 +153,7 @@
               <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexMCU";?>">Tampilan MCU</a></li>
               <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurMCU";?>">Alur MCU</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </li>
       <!-- PENUNJANG MEDIS -->
@@ -153,15 +164,17 @@
           <span>Penunjang Medis</span>
         </a>
         <ul class="sub-menu">
-          <li><a href="<?php echo base_url()."index.php/AdminPenunjangnMedis/indexFarmasi";?>">Farmasi</a></li>
-          <li class="has-sub">
+          <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexFarmasi";?>">Farmasi</a></li>
+          <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexLab";?>">Laboratorium</a></li>
+          <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexRadiologi";?>">Radiologi</a></li>
+          <!-- <li class="has-sub">
             <a href="javascript:;">
               <b class="caret"></b>
               Laboratorium
             </a>
             <ul class="sub-menu">
-              <li><a href="<?php echo base_url()."index.php/AdminPenunjangnMedis/indexLab";?>">Tampilan Laboratorium</a></li>
-              <li><a href="<?php echo base_url()."index.php/AdminPenunjangnMedis/indexAlurLab";?>">Alur Laboratorium</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexLab";?>">Tampilan Laboratorium</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexAlurLab";?>">Alur Laboratorium</a></li>
             </ul>
           </li>
           <li class="has-sub">
@@ -170,10 +183,10 @@
               Radiologi
             </a>
             <ul class="sub-menu">
-              <li><a href="<?php echo base_url()."index.php/AdminPenunjangnMedis/indexRadiologi";?>">Tampilan Radiologi</a></li>
-              <li><a href="<?php echo base_url()."index.php/AdminPenunjangnMedis/indexAlurRadiologi";?>">Alur Radiologi</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexRadiologi";?>">Tampilan Radiologi</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPenunjangMedis/indexAlurRadiologi";?>">Alur Radiologi</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </li>
       <!-- INFORMASI -->

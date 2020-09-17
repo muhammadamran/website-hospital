@@ -73,8 +73,6 @@ class AdminProfileRS extends CI_Controller {
 			$file = $this->upload->data();
 			
 			$gambar= $file['file_name'];
-            $judul_1 = $this->input->post('judul_1');
-			$isi_1 = $this->input->post('isi_1');
 
 			$data = array(
 				'link_1' => $gambar,
@@ -130,7 +128,7 @@ class AdminProfileRS extends CI_Controller {
 		redirect('AdminProfileRS/indexRS');	
 	}
 
-		// HAPUS PROFILE
+	// HAPUS PROFILE
 	public function hapus($id)
 	{
 		if(isset($_POST['hapus']))

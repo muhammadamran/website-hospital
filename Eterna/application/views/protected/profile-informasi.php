@@ -164,9 +164,9 @@
 						<div class="panel-body">
 							<table id="data-table-buttons" class="table table-striped table-bordered table-td-valign-middle">
 								<thead>
-									<tr align="center">
+									<tr align="center" style="font-size: 14px">
 										<th class="text-nowrap">ID</th>
-										<th class="text-nowrap">CODE</th>
+										<th class="text-nowrap">Kode</th>
 										<th class="text-nowrap">Details Informations</th>
 										<th class="text-nowrap">Action</th>
 										<th class="text-nowrap">Images Footer</th>
@@ -186,7 +186,7 @@
 									if(mysqli_num_rows($result)>0){
 										while($row = mysqli_fetch_array($result))
 										{
-											echo "<tr align='center'>";
+											echo "<tr align='center' style='font-size: 14px;'>";
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>

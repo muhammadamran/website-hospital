@@ -110,7 +110,7 @@
 							<div class="sidebar-item categories">
 								<ul>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>"><font style="color: #28a745">Pelayanan Bedah</font></a></li>
-									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurBedah";?>">Alur Pelayanan Bedah</a></li>
+									<!-- <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurBedah";?>">Alur Pelayanan Bedah</a></li> -->
 								</ul>
 							</div>
 							<h3 class="sidebar-title">Pelayanan Medis</h3>

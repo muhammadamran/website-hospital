@@ -90,11 +90,7 @@
         </li>
         <li class="drop-down"><a href="#"><b>Pelayanan Medis</b></a>
           <ul>
-            <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><b>Hemodialisis</b></a>
-              <ul>
-                <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurHD";?>"><b>Alur Pelayanan Hemodialisis</b></a></li>
-              </ul>
-            </li>
+            <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><b>Hemodialisis</b></a></li>
             <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexIGD";?>"><b>IGD</b></a>
               <ul>
                 <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurIGD";?>"><b>Alur Pelayanan IGD</b></a></li>
@@ -119,9 +115,7 @@
                 <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurCAPD";?>"><b>Alur Pelayanan CAPD</b></a></li>
               </ul>
             </li>
-            <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>"><b>Pelayanan Bedah</b></a></li>
-            <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexMCU";?>"><b>Medical Check Up</b></a></li>
-            <!-- <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>"><b>Bedah</b></a>
+            <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>"><b>Bedah</b></a>
               <ul>
                 <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurBedah";?>"><b>Alur Pelayanan Bedah</b></a></li>
               </ul>
@@ -130,15 +124,13 @@
               <ul>
                 <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurMCU";?>"><b>Alur Pelayanan Medical Check Up</b></a></li>
               </ul>
-            </li> -->
+            </li>
           </ul>
         </li>
         <li class="drop-down"><a href="#"><b>Penunjang Medis</b></a>
           <ul>
             <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexFarmasi";?>"><b>Farmasi</b></a></li>
-            <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexLab";?>"><b>Laboratorium</b></a></li>
-            <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexRadiologi";?>"><b>Radiologi</b></a></li>
-            <!-- <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexLab";?>"><b>Laboratorium</b></a>
+            <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexLab";?>"><b>Laboratorium</b></a>
               <ul>
                 <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexAlurLab";?>"><b>Alur Pelayanan Laboratorium</b></a></li>
               </ul>
@@ -147,7 +139,7 @@
               <ul>
                 <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexAlurRadiologi";?>"><b>Alur Pelayanan Radiologi</b></a></li>
               </ul>
-            </li> -->
+            </li>
           </ul>
         </li>
         <li class="drop-down"><a href="#"><b>Informasi</b></a>
