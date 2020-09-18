@@ -26,20 +26,20 @@
 						    {
 						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_hd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+						    $result = mysqli_query($con,"SELECT * FROM tb_alurhd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 						    if(mysqli_num_rows($result)>0){
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
 							<?php
-							if ($row['link_hd']==NULL) {
+							if ($row['alur_hd']==NULL) {
 							?>
 								<img src="<?php echo base_url('assets/images/empty/img-empty.png');?>" alt="" class="img-fluid">
 							<?php
 							}else{
 							?>
-								<img src="<?php echo base_url('assets/images/rumah-sakit/hd/'.$row['link_hd']);?>" alt="" class="img-fluid">
+								<img src="<?php echo base_url('assets/images/rumah-sakit/hd/alur/'.$row['alur_hd']);?>" alt="" class="img-fluid">
 							<?php } ?>
 							<?php } } mysqli_close($con); ?>
 							</div>
@@ -52,13 +52,13 @@
 						    {
 						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_hd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+						    $result = mysqli_query($con,"SELECT * FROM tb_alurhd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 						    if(mysqli_num_rows($result)>0){
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
-								<a href=""><?php echo $row['judul_hd']; ?></a>
+								<a href=""><?php echo $row['judul_alurhd']; ?></a>
 							<?php } } mysqli_close($con); ?>
 							</h2>
 							<div class="entry-content">
@@ -68,13 +68,13 @@
 						    {
 						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_hd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+						    $result = mysqli_query($con,"SELECT * FROM tb_alurhd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 						    if(mysqli_num_rows($result)>0){
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
-							<?php echo $row['isi_hd']; ?>
+							<?php echo $row['isi_alurhd']; ?>
 							<?php } } mysqli_close($con); ?>
 							</div>
 							<div class="entry-footer clearfix">

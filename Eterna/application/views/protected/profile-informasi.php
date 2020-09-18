@@ -181,7 +181,7 @@
 									{
 										echo "Failed to connect to MySQL: " . mysqli_connect_error();
 									}
-									$result = mysqli_query($con,"SELECT * FROM tb_profile ORDER BY id DESC");
+									$result = mysqli_query($con,"SELECT * FROM tb_profile WHERE berkas IS NULL ORDER BY id DESC");
 
 									if(mysqli_num_rows($result)>0){
 										while($row = mysqli_fetch_array($result))
@@ -753,7 +753,7 @@
 															</button>
 														</div>
 														<div class="modal-body">
-															<?php echo form_open_multipart(site_url('AdminProfile/delete/'.$row['id'])); ?>
+															<?php echo form_open_multipart(site_url('AdminProfile/hapus/'.$row['id'])); ?>
 															<div class="form-group">
 																	<h6>ID : <b><u><?php echo $row['id'];?></u></b></h6>
 																	<hr>
@@ -805,7 +805,7 @@
 																	<input type="hidden" name="id" class="form-control" value="<?php echo $row['id'];?>" required>
 																	<input type="hidden" name="berkas" class="form-control" value="HAPUS" required>
 																</div>
-																<button type="submit" name="delete" class="btn btn-danger btn-block btn-flat">Yes
+																<button type="submit" name="hapus" class="btn btn-danger btn-block btn-flat">Yes
 																</button>
 																<button type="button" class="btn btn-warning btn-block btn-flat" data-dismiss="modal">
 																	No

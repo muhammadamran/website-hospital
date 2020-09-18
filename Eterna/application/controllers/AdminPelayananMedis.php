@@ -180,6 +180,8 @@ class AdminPelayananMedis extends CI_Controller {
 		$this->load->view('protected/include/footer');
 		$this->load->view('protected/include/thirdparty');
 	}
+
+//////////////////////////////////////PELAYANAN////////////////////////////////////////////////////
 ////////////////////////////////////HD//////////////////////////////////
 	// INPUT DATA PROFILE
 	public function createhd()
@@ -1034,8 +1036,7 @@ class AdminPelayananMedis extends CI_Controller {
 	}
 ////////////////////////////////////END MCU//////////////////////////////
 
-
-
+//////////////////////////////////////ALUR PELAYANAN////////////////////////////////////////////////////
 ////////////////////////////////////ALUR HD//////////////////////////////////
 	// INPUT DATA PROFILE
 	public function createalurhd()
@@ -1516,7 +1517,7 @@ class AdminPelayananMedis extends CI_Controller {
 	}
 ////////////////////////////////////END ALUR RAWAT INAP//////////////////////////////
 
-////////////////////////////////////ALUR IGD//////////////////////////////////
+////////////////////////////////////ALUR CAPD//////////////////////////////////
 	// INPUT DATA PROFILE
 	public function createalurcapd()
 	{
@@ -1634,5 +1635,485 @@ class AdminPelayananMedis extends CI_Controller {
 		} 
 		redirect('AdminPelayananMedis/indexAlurCAPD');	
 	}
-////////////////////////////////////END ALUR IGD//////////////////////////////
+////////////////////////////////////END ALUR CAPD//////////////////////////////
+
+////////////////////////////////////TATA TERTIB RAWAT INAP//////////////////////////////////
+	// INPUT DATA PROFILE
+	public function createttri()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'isi_ttri' => $this->input->post('isi_ttri'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'TAMPILAN TATA TERTIB RAWAT JALAN'
+		);
+
+		if (!empty($_FILES['link_ttri']['name'])) {
+			$upload = $this->_do_upload_ttri();
+			$data['link_ttri'] = $upload;
+		}
+		$this->M_MasterData->input_ri('tb_ttri', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminPelayananMedis/indexTTRI', $data);
+	}
+
+	private function _do_upload_ttri()
+	{
+		$config['upload_path'] 		= 'assets/images/rumah-sakit/rawat-inap/tata-tertib/';
+		$config['allowed_types'] 	= 'jpeg|jpg|png|pdf';
+		$config['max_size'] 		= 2000;
+		$config['encrypt_name'] 	= true;
+		
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('link_ttri')) {
+			$this->session->flasriata('flash', $this->upload->display_errors('',''));
+			redirect('AdminPelayananMedis/indexTTRI');
+		}
+		return $this->upload->data('file_name');
+	}
+
+	// GAMBAR ri
+	public function updategambarttri($id){
+
+		$config['upload_path']="assets/images/rumah-sakit/rawat-inap/tata-tertib/";
+		$config['allowed_types']='pdf|jpg|png|jpeg';
+		$config['max_size'] = '10000';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload',$config);
+		if($this->upload->do_upload("link_ttri")){
+			$file = $this->upload->data();
+			
+			$gambar= $file['file_name'];
+
+			$data = array(
+				'link_ttri' => $gambar,
+			);
+
+			$result= $this->M_MasterData->update_tt_ri('tb_ttri',$data, $id);
+			echo json_decode($result);
+		}
+		redirect('AdminPelayananMedis/indexTTRI');
+	}
+
+	// UPDATE
+	public function updateisittri($id)
+	{
+		if(isset($_POST['updateisittri']))
+		{	
+			$data = array(
+				'isi_ttri' => $this->input->post('isi_ttri')
+			);
+			$this->M_MasterData->update_tt_ri('tb_ttri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexTTRI');	
+	}
+
+	// HAPUS ri
+	public function deletettri($id)
+	{
+		if(isset($_POST['deletettri']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_tt_ri('tb_ttri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexTTRI');	
+	}
+
+	// HIDDEN ri
+	public function updatehiddenttri($id)
+	{
+		if(isset($_POST['updatehiddenttri']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_tt_ri('tb_ttri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexTTRI');	
+	}
+
+	// SHOW ri
+	public function updateshowttri($id)
+	{
+		if(isset($_POST['updateshowttri']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_tt_ri('tb_ttri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexTTRI');	
+	}
+////////////////////////////////////END TATA TERTIB RAWAT INAP//////////////////////////////
+
+////////////////////////////////////HAK & KEWAJIBAN PASIEN RAWAT INAP//////////////////////////////////
+	// INPUT DATA PROFILE
+	public function createhkpri()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'isi_hkpri' => $this->input->post('isi_hkpri'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'TAMPILAN HAK DAN KEWAJIBAN PASIEN RAWAT JALAN'
+		);
+
+		if (!empty($_FILES['link_hkpri']['name'])) {
+			$upload = $this->_do_upload_hkpri();
+			$data['link_hkpri'] = $upload;
+		}
+		$this->M_MasterData->input_hkp_ri('tb_hkpri', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminPelayananMedis/indexHKPRI', $data);
+	}
+
+	private function _do_upload_hkpri()
+	{
+		$config['upload_path'] 		= 'assets/images/rumah-sakit/rawat-inap/hak-kewajiban/';
+		$config['allowed_types'] 	= 'jpeg|jpg|png|pdf';
+		$config['max_size'] 		= 2000;
+		$config['encrypt_name'] 	= true;
+		
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('link_hkpri')) {
+			$this->session->flasriata('flash', $this->upload->display_errors('',''));
+			redirect('AdminPelayananMedis/indexHKPRI');
+		}
+		return $this->upload->data('file_name');
+	}
+
+	// GAMBAR ri
+	public function updategambarhkpri($id){
+
+		$config['upload_path']="assets/images/rumah-sakit/rawat-inap/hak-kewajiban/";
+		$config['allowed_types']='pdf|jpg|png|jpeg';
+		$config['max_size'] = '10000';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload',$config);
+		if($this->upload->do_upload("link_hkpri")){
+			$file = $this->upload->data();
+			
+			$gambar= $file['file_name'];
+
+			$data = array(
+				'link_hkpri' => $gambar,
+			);
+
+			$result= $this->M_MasterData->update_hkp_ri('tb_hkpri',$data, $id);
+			echo json_decode($result);
+		}
+		redirect('AdminPelayananMedis/indexHKPRI');
+	}
+
+	// UPDATE
+	public function updateisihkpri($id)
+	{
+		if(isset($_POST['updateisihkpri']))
+		{	
+			$data = array(
+				'isi_hkpri' => $this->input->post('isi_hkpri')
+			);
+			$this->M_MasterData->update_hkp_ri('tb_hkpri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexHKPRI');	
+	}
+
+	// HAPUS ri
+	public function deletehkpri($id)
+	{
+		if(isset($_POST['deletehkpri']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_hkp_ri('tb_hkpri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexHKPRI');	
+	}
+
+	// HIDDEN ri
+	public function updatehiddenhkpri($id)
+	{
+		if(isset($_POST['updatehiddenhkpri']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_hkp_ri('tb_hkpri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexHKPRI');	
+	}
+
+	// SHOW ri
+	public function updateshowhkpri($id)
+	{
+		if(isset($_POST['updateshowhkpri']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_hkp_ri('tb_hkpri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexHKPRI');	
+	}
+////////////////////////////////////END HAK & KEWAJIBAN PASIEN RAWAT INAP//////////////////////////////	
+
+////////////////////////////////////ADMINISTRASI RAWAT JALAN//////////////////////////////////
+	// INPUT DATA PROFILE
+	public function createadmrj()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'isi_admrj' => $this->input->post('isi_admrj'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'TAMPILAN ADMINISTRASI RAWAT JALAN'
+		);
+
+		if (!empty($_FILES['link_admrj']['name'])) {
+			$upload = $this->_do_upload_admrj();
+			$data['link_admrj'] = $upload;
+		}
+		$this->M_MasterData->input_adm_rj('tb_admrj', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminPelayananMedis/indexAdmRJ', $data);
+	}
+
+	private function _do_upload_admrj()
+	{
+		$config['upload_path'] 		= 'assets/images/rumah-sakit/rawat-jalan/adm/';
+		$config['allowed_types'] 	= 'jpeg|jpg|png|pdf';
+		$config['max_size'] 		= 2000;
+		$config['encrypt_name'] 	= true;
+		
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('link_admrj')) {
+			$this->session->flasriata('flash', $this->upload->display_errors('',''));
+			redirect('AdminPelayananMedis/indexAdmRJ');
+		}
+		return $this->upload->data('file_name');
+	}
+
+	// GAMBAR ri
+	public function updategambaradmrj($id){
+
+		$config['upload_path']="assets/images/rumah-sakit/rawat-jalan/adm/";
+		$config['allowed_types']='pdf|jpg|png|jpeg';
+		$config['max_size'] = '10000';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload',$config);
+		if($this->upload->do_upload("link_admrj")){
+			$file = $this->upload->data();
+			
+			$gambar= $file['file_name'];
+
+			$data = array(
+				'link_admrj' => $gambar,
+			);
+
+			$result= $this->M_MasterData->update_admrj('tb_admrj',$data, $id);
+			echo json_decode($result);
+		}
+		redirect('AdminPelayananMedis/indexAdmRJ');
+	}
+
+	// UPDATE
+	public function updateisiadmrj($id)
+	{
+		if(isset($_POST['updateisiadmrj']))
+		{	
+			$data = array(
+				'isi_admrj' => $this->input->post('isi_admrj')
+			);
+			$this->M_MasterData->update_admrj('tb_admrj',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRJ');	
+	}
+
+	// HAPUS ri
+	public function deleteadmrj($id)
+	{
+		if(isset($_POST['deleteadmrj']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_admrj('tb_admrj',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRJ');	
+	}
+
+	// HIDDEN ri
+	public function updatehiddenadmrj($id)
+	{
+		if(isset($_POST['updatehiddenadmrj']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_admrj('tb_admrj',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRJ');	
+	}
+
+	// SHOW ri
+	public function updateshowadmrj($id)
+	{
+		if(isset($_POST['updateshowadmrj']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_admrj('tb_admrj',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRJ');	
+	}
+////////////////////////////////////END ADMINISTRASI RAWAT JALAN//////////////////////////////	
+
+////////////////////////////////////ADMINISTRASI RAWAT JALAN//////////////////////////////////
+	// INPUT DATA PROFILE
+	public function createadmri()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'isi_admri' => $this->input->post('isi_admri'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'TAMPILAN ADMINISTRASI RAWAT INAO'
+		);
+
+		if (!empty($_FILES['link_admri']['name'])) {
+			$upload = $this->_do_upload_admri();
+			$data['link_admri'] = $upload;
+		}
+		$this->M_MasterData->input_adm_ri('tb_admri', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminPelayananMedis/indexAdmRI', $data);
+	}
+
+	private function _do_upload_admri()
+	{
+		$config['upload_path'] 		= 'assets/images/rumah-sakit/rawat-jalan/adm/';
+		$config['allowed_types'] 	= 'jpeg|jpg|png|pdf';
+		$config['max_size'] 		= 2000;
+		$config['encrypt_name'] 	= true;
+		
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('link_admri')) {
+			$this->session->flasriata('flash', $this->upload->display_errors('',''));
+			redirect('AdminPelayananMedis/indexAdmRI');
+		}
+		return $this->upload->data('file_name');
+	}
+
+	// GAMBAR ri
+	public function updategambaradmri($id){
+
+		$config['upload_path']="assets/images/rumah-sakit/rawat-inap/adm/";
+		$config['allowed_types']='pdf|jpg|png|jpeg';
+		$config['max_size'] = '10000';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload',$config);
+		if($this->upload->do_upload("link_admri")){
+			$file = $this->upload->data();
+			
+			$gambar= $file['file_name'];
+
+			$data = array(
+				'link_admri' => $gambar,
+			);
+
+			$result= $this->M_MasterData->update_admri('tb_admri',$data, $id);
+			echo json_decode($result);
+		}
+		redirect('AdminPelayananMedis/indexAdmRI');
+	}
+
+	// UPDATE
+	public function updateisiadmri($id)
+	{
+		if(isset($_POST['updateisiadmri']))
+		{	
+			$data = array(
+				'isi_admri' => $this->input->post('isi_admri')
+			);
+			$this->M_MasterData->update_admri('tb_admri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRI');	
+	}
+
+	// HAPUS ri
+	public function deleteadmri($id)
+	{
+		if(isset($_POST['deleteadmri']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_admri('tb_admri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRI');	
+	}
+
+	// HIDDEN ri
+	public function updatehiddenadmri($id)
+	{
+		if(isset($_POST['updatehiddenadmri']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_admri('tb_admri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRI');	
+	}
+
+	// SHOW ri
+	public function updateshowadmri($id)
+	{
+		if(isset($_POST['updateshowadmri']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_admri('tb_admri',$data, $id);
+		} 
+		redirect('AdminPelayananMedis/indexAdmRI');	
+	}
+////////////////////////////////////END ADMINISTRASI RAWAT JALAN//////////////////////////////	
 }
