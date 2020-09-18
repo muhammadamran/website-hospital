@@ -110,7 +110,7 @@
 							<div class="sidebar-item categories">
 								<ul>
 									<li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexRadiologi";?>"><font style="color: #28a745">Radiologi </font></a></li>
-									<li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexAlurRadiologi";?>">Alur Pelayanan Radiologi </a></li>
+									<!-- <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexAlurRadiologi";?>">Alur Pelayanan Radiologi </a></li> -->
 								</ul>
 							</div>
 							<h3 class="sidebar-title">Pelayanan Medis</h3>

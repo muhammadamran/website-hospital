@@ -1061,7 +1061,7 @@ class AdminPelayananMedis extends CI_Controller {
 		}
 		$this->M_MasterData->input_igd('tb_alurhd', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
-		redirect('AdminPelayananMedis/indexHD', $data);
+		redirect('AdminPelayananMedis/indexAlurHD', $data);
 	}
 
 	private function _do_upload_alurhd()
@@ -1098,7 +1098,7 @@ class AdminPelayananMedis extends CI_Controller {
 				'alur_hd' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_alur_hd('tb_alurhd',$data, $id);
+			$result= $this->M_MasterData->update_alurhd('tb_alurhd',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminPelayananMedis/indexAlurHD');
@@ -1112,7 +1112,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'isi_alurhd' => $this->input->post('isi_alurhd')
 			);
-			$this->M_MasterData->update_alur_hd('tb_alurhd',$data, $id);
+			$this->M_MasterData->update_alurhd('tb_alurhd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurHD');	
 	}
@@ -1125,7 +1125,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_alur_hd('tb_alurhd',$data, $id);
+			$this->M_MasterData->update_alurhd('tb_alurhd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurHD');	
 	}
@@ -1138,7 +1138,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_hd('tb_alurhd',$data, $id);
+			$this->M_MasterData->update_alurhd('tb_alurhd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurHD');	
 	}
@@ -1151,7 +1151,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_hd('tb_alurhd',$data, $id);
+			$this->M_MasterData->update_alurhd('tb_alurhd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurHD');	
 	}
@@ -1179,7 +1179,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_alurigd();
 			$data['alur_igd'] = $upload;
 		}
-		$this->M_MasterData->input_igd('tb_alurigd', $data);
+		$this->M_MasterData->input_alurigd('tb_alurigd', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexAlurIGD', $data);
 	}
@@ -1218,7 +1218,7 @@ class AdminPelayananMedis extends CI_Controller {
 				'alur_igd' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_alur_igd('tb_alurigd',$data, $id);
+			$result= $this->M_MasterData->update_alurigd('tb_alurigd',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminPelayananMedis/indexAlurIGD');
@@ -1232,7 +1232,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'isi_alurigd' => $this->input->post('isi_alurigd')
 			);
-			$this->M_MasterData->update_alur_igd('tb_alurigd',$data, $id);
+			$this->M_MasterData->update_alurigd('tb_alurigd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurIGD');	
 	}
@@ -1245,7 +1245,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_alur_igd('tb_alurigd',$data, $id);
+			$this->M_MasterData->update_alurigd('tb_alurigd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurIGD');	
 	}
@@ -1258,7 +1258,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_igd('tb_alurigd',$data, $id);
+			$this->M_MasterData->update_alurigd('tb_alurigd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurIGD');	
 	}
@@ -1271,7 +1271,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_igd('tb_alurigd',$data, $id);
+			$this->M_MasterData->update_alurigd('tb_alurigd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurIGD');	
 	}
@@ -1299,7 +1299,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_alurrj();
 			$data['alur_rj'] = $upload;
 		}
-		$this->M_MasterData->input_rj('tb_alurrj', $data);
+		$this->M_MasterData->input_alurrj('tb_alurrj', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexAlurRJ', $data);
 	}
@@ -1338,7 +1338,7 @@ class AdminPelayananMedis extends CI_Controller {
 				'alur_rj' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_alur_rj('tb_alurrj',$data, $id);
+			$result= $this->M_MasterData->update_alurrj('tb_alurrj',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminPelayananMedis/indexAlurRJ');
@@ -1352,7 +1352,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'isi_alurrj' => $this->input->post('isi_alurrj')
 			);
-			$this->M_MasterData->update_alur_rj('tb_alurrj',$data, $id);
+			$this->M_MasterData->update_alurrj('tb_alurrj',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRJ');	
 	}
@@ -1365,7 +1365,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_alur_rj('tb_alurrj',$data, $id);
+			$this->M_MasterData->update_alurrj('tb_alurrj',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRJ');	
 	}
@@ -1378,7 +1378,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_rj('tb_alurrj',$data, $id);
+			$this->M_MasterData->update_alurrj('tb_alurrj',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRJ');	
 	}
@@ -1391,7 +1391,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_rj('tb_alurrj',$data, $id);
+			$this->M_MasterData->update_alurrj('tb_alurrj',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRJ');	
 	}
@@ -1419,7 +1419,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_alurri();
 			$data['alur_ri'] = $upload;
 		}
-		$this->M_MasterData->input_ri('tb_alurri', $data);
+		$this->M_MasterData->input_alurri('tb_alurri', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexAlurRI', $data);
 	}
@@ -1458,7 +1458,7 @@ class AdminPelayananMedis extends CI_Controller {
 				'alur_ri' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_alur_ri('tb_alurri',$data, $id);
+			$result= $this->M_MasterData->update_alurri('tb_alurri',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminPelayananMedis/indexAlurRI');
@@ -1472,7 +1472,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'isi_alurri' => $this->input->post('isi_alurri')
 			);
-			$this->M_MasterData->update_alur_ri('tb_alurri',$data, $id);
+			$this->M_MasterData->update_alurri('tb_alurri',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRI');	
 	}
@@ -1485,7 +1485,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_alur_ri('tb_alurri',$data, $id);
+			$this->M_MasterData->update_alurri('tb_alurri',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRI');	
 	}
@@ -1498,7 +1498,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_ri('tb_alurri',$data, $id);
+			$this->M_MasterData->update_alurri('tb_alurri',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRI');	
 	}
@@ -1511,7 +1511,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_ri('tb_alurri',$data, $id);
+			$this->M_MasterData->update_alurri('tb_alurri',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurRI');	
 	}
@@ -1539,7 +1539,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_alurcapd();
 			$data['alur_capd'] = $upload;
 		}
-		$this->M_MasterData->input_capd('tb_alurcapd', $data);
+		$this->M_MasterData->input_alurcapd('tb_alurcapd', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexAlurCAPD', $data);
 	}
@@ -1578,7 +1578,7 @@ class AdminPelayananMedis extends CI_Controller {
 				'alur_capd' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_alur_capd('tb_alurcapd',$data, $id);
+			$result= $this->M_MasterData->update_alurcapd('tb_alurcapd',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminPelayananMedis/indexAlurCAPD');
@@ -1592,7 +1592,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'isi_alurcapd' => $this->input->post('isi_alurcapd')
 			);
-			$this->M_MasterData->update_alur_capd('tb_alurcapd',$data, $id);
+			$this->M_MasterData->update_alurcapd('tb_alurcapd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurCAPD');	
 	}
@@ -1605,7 +1605,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_alur_capd('tb_alurcapd',$data, $id);
+			$this->M_MasterData->update_alurcapd('tb_alurcapd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurCAPD');	
 	}
@@ -1618,7 +1618,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_capd('tb_alurcapd',$data, $id);
+			$this->M_MasterData->update_alurcapd('tb_alurcapd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurCAPD');	
 	}
@@ -1631,7 +1631,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_alur_capd('tb_alurcapd',$data, $id);
+			$this->M_MasterData->update_alurcapd('tb_alurcapd',$data, $id);
 		} 
 		redirect('AdminPelayananMedis/indexAlurCAPD');	
 	}
@@ -1899,7 +1899,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_admrj();
 			$data['link_admrj'] = $upload;
 		}
-		$this->M_MasterData->input_adm_rj('tb_admrj', $data);
+		$this->M_MasterData->input_admrj('tb_admrj', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexAdmRJ', $data);
 	}
@@ -2019,7 +2019,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_admri();
 			$data['link_admri'] = $upload;
 		}
-		$this->M_MasterData->input_adm_ri('tb_admri', $data);
+		$this->M_MasterData->input_admri('tb_admri', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexAdmRI', $data);
 	}

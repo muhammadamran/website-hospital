@@ -48,13 +48,13 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form method="POST" action="<?php echo base_url() ?>index.php/AdminPelayananMedis/createrj" enctype="multipart/form-data">
+						<form method="POST" action="<?php echo base_url() ?>index.php/AdminPenunjangMedis/createradiologi" enctype="multipart/form-data">
 							<div class="modal-body">
 								<div class="row">	
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label>Code</label>
-											<input type="text" class="form-control" name="kode" value="RJ<?php echo date('YmdHis') ?>" readonly="readonly">
+											<input type="text" class="form-control" name="kode" value="RADIOLOGI<?php echo date('YmdHis') ?>" readonly="readonly">
 											<input type="hidden" class="form-control" name="user_id" value="<?php echo $this->session->userdata("user_id"); ?>" readonly="readonly">
 											<input type="hidden" class="form-control" name="status" value="SHOW" readonly="readonly">
 										</div>
@@ -62,19 +62,19 @@
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label>Gambar Radiologi<font style="color: red">*</font></label>
-											<input type="file" class="form-control" name="link_rj" required="required">
+											<input type="file" class="form-control" name="link_radiologi" required="required">
 										</div>
 									</div>	
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label>Judul<font style="color: red">*</font></label>
-											<input type="text" class="form-control" name="judul_rj" placeholder="Judul..." required="required">
+											<input type="text" class="form-control" name="judul_radiologi" placeholder="Judul..." required="required">
 										</div>
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label>Isi Content Radiologi<font style="color: red">*</font></label>
-											<textarea class="ckeditor" id="ckedtor" name="isi_rj" placeholder="Isi Content Radiologi..."></textarea>
+											<textarea class="ckeditor" id="ckedtor" name="isi_radiologi" placeholder="Isi Content Radiologi..."></textarea>
 										</div>
 									</div>
 								</div>
@@ -124,7 +124,7 @@
 									{
 										echo "Failed to connect to MySQL: " . mysqli_connect_error();
 									}
-									$result = mysqli_query($con,"SELECT * FROM tb_rj WHERE berkas IS NULL ORDER BY id DESC");
+									$result = mysqli_query($con,"SELECT * FROM tb_radiologi WHERE berkas IS NULL ORDER BY id DESC");
 
 									if(mysqli_num_rows($result)>0){
 										while($row = mysqli_fetch_array($result))
@@ -170,10 +170,10 @@
 																		<h5>Gambar Radiologi</h5>
 																		<hr>
 																		<?php
-																		if ($row['link_rj']==NULL) { ?>
+																		if ($row['link_radiologi']==NULL) { ?>
 																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Radiologi</i></b></font></h6>
 																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-jalan/'. $row['link_rj'];?>" class="lingkaran3" alt="User profile picture">   
+																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-jalan/'. $row['link_radiologi'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
 																	</div>
 																</div>
@@ -181,13 +181,13 @@
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Judul</label>
-																		<input type="text" class="form-control" name="judul_rj" placeholder="Judul..." value="<?php echo $row['judul_rj'];?>">
+																		<input type="text" class="form-control" name="judul_radiologi" placeholder="Judul..." value="<?php echo $row['judul_radiologi'];?>">
 																	</div>
 																</div>
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_rj" placeholder="Isi..."><?php echo $row['isi_rj'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_radiologi" placeholder="Isi..."><?php echo $row['isi_radiologi'];?></textarea>
 																	</div>
 																</div>
 															</div>
@@ -210,7 +210,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updategambarrj/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updategambarradiologi/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -218,10 +218,10 @@
 																		<h5>Gambar Radiologi</h5>
 																		<hr>
 																		<?php
-																		if ($row['link_rj']==NULL) { ?>
+																		if ($row['link_radiologi']==NULL) { ?>
 																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Radiologi</i></b></font></h6>
 																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-jalan/'. $row['link_rj'];?>" class="lingkaran3" alt="User profile picture">   
+																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-jalan/'. $row['link_radiologi'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
 																	</div>
 																</div>
@@ -229,13 +229,13 @@
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Gambar Radiologi</label>
-																		<input type="file" class="form-control" name="link_rj" value="<?php echo $row['link_rj'];?>">
+																		<input type="file" class="form-control" name="link_radiologi" value="<?php echo $row['link_radiologi'];?>">
 																		<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'];?>">
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updategambarrj" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updategambarradiologi" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -255,24 +255,24 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateisirj/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updateisiradiologi/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Judul</label>
-																		<input type="text" class="form-control" name="judul_rj" placeholder="Judul..." value="<?php echo $row['judul_rj'];?>">
+																		<input type="text" class="form-control" name="judul_radiologi" placeholder="Judul..." value="<?php echo $row['judul_radiologi'];?>">
 																	</div>
 																</div>
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_rj" placeholder="Isi..."><?php echo $row['isi_rj'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_radiologi" placeholder="Isi..."><?php echo $row['isi_radiologi'];?></textarea>
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateisirj" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updateisiradiologi" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -293,13 +293,13 @@
 															</button>
 														</div>
 														<div class="modal-body">
-															<?php echo form_open_multipart(site_url('AdminPelayananMedis/deleterj/'.$row['id'])); ?>
+															<?php echo form_open_multipart(site_url('AdminPenunjangMedis/deleteradiologi/'.$row['id'])); ?>
 															<div class="form-group">
 																<label>Anda yakin akan menghapus data ini?</label>
 																<input type="hidden" name="id" class="form-control" value="<?php echo $row['id'];?>" required>
 																<input type="hidden" name="berkas" class="form-control" value="HAPUS" required>
 															</div>
-															<button type="submit" name="deleterj" class="btn btn-danger btn-block btn-flat">Yes
+															<button type="submit" name="deleteradiologi" class="btn btn-danger btn-block btn-flat">Yes
 															</button>
 															<button type="button" class="btn btn-warning btn-block btn-flat" data-dismiss="modal">
 																No
@@ -321,7 +321,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updatehiddenrj/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updatehiddenradiologi/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -337,7 +337,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updatehiddenrj" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updatehiddenradiologi" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>
@@ -357,7 +357,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateshowrj/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updateshowradiologi/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -373,7 +373,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateshowrj" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updateshowradiologi" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>

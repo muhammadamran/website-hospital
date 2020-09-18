@@ -33,48 +33,42 @@
 		<div id="content" class="content">
 			<ol class="breadcrumb float-xl-right">
 				<li class="breadcrumb-item"><a href="javascript:;">Site Website</a></li>
-				<li class="breadcrumb-item"><a href="javascript:;">Penunjang Medis</a></li>
-				<li class="breadcrumb-item active">Penunjang Medis Rumah Sakit Khusus Ginjal Ny. R.A. Habibie</li>
+				<li class="breadcrumb-item"><a href="javascript:;">Pelayanan Medis</a></li>
+				<li class="breadcrumb-item active">Pelayanan Medis Rumah Sakit Khusus Ginjal Ny. R.A. Habibie</li>
 			</ol>
-			<h1 class="page-header">Penunjang Medis - Laboratorium</h1>
+			<h1 class="page-header">Pelayanan Medis - Administrasi Rawat Inap</h1>
 			<hr>
 			<!-- MODAL ADD -->
 			<div class="modal fade" id="modal-add">
 				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
-							<label class="modal-title">Add Profile Laboratorium</label>
+							<label class="modal-title">Add Administrasi Rawat Inap</label>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form method="POST" action="<?php echo base_url() ?>index.php/AdminPenunjangMedis/createlab" enctype="multipart/form-data">
+						<form method="POST" action="<?php echo base_url() ?>index.php/AdminPelayananMedis/createadmri" enctype="multipart/form-data">
 							<div class="modal-body">
 								<div class="row">	
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label>Code</label>
-											<input type="text" class="form-control" name="kode" value="LAB<?php echo date('YmdHis') ?>" readonly="readonly">
+											<input type="text" class="form-control" name="kode" value="ADM-RI<?php echo date('YmdHis') ?>" readonly="readonly">
 											<input type="hidden" class="form-control" name="user_id" value="<?php echo $this->session->userdata("user_id"); ?>" readonly="readonly">
 											<input type="hidden" class="form-control" name="status" value="SHOW" readonly="readonly">
 										</div>
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Gambar Laboratorium<font style="color: red">*</font></label>
-											<input type="file" class="form-control" name="link_lab" required="required">
+											<label>Gambar Administrasi Rawat Inap</label>
+											<input type="file" class="form-control" name="link_admri">
 										</div>
 									</div>	
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Judul<font style="color: red">*</font></label>
-											<input type="text" class="form-control" name="judul_lab" placeholder="Judul..." required="required">
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<label>Isi Content Laboratorium<font style="color: red">*</font></label>
-											<textarea class="ckeditor" id="ckedtor" name="isi_lab" placeholder="Isi Content Laboratorium..."></textarea>
+											<label>Isi Content Administrasi Rawat Inap</label>
+											<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi Content Administrasi Rawat Inap..."></textarea>
 										</div>
 									</div>
 								</div>
@@ -94,8 +88,8 @@
 				<div class="col-xl-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">Table - Laboratorium</h4>
-							<button class="btn bg-info btn-flat" data-toggle="modal" data-target="#modal-add" title="Tambah Agenda Rapat"><i class="nav-icon far fa-plus-square"></i> Add Profile Laboratorium
+							<h4 class="panel-title">Table - Administrasi Rawat Inap</h4>
+							<button class="btn bg-info btn-flat" data-toggle="modal" data-target="#modal-add" title="Tambah Agenda Rapat"><i class="nav-icon far fa-plus-square"></i> Add Administrasi Rawat Inap
 							</button>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="panel-heading-btn">
@@ -124,7 +118,7 @@
 									{
 										echo "Failed to connect to MySQL: " . mysqli_connect_error();
 									}
-									$result = mysqli_query($con,"SELECT * FROM tb_lab WHERE berkas IS NULL ORDER BY id DESC");
+									$result = mysqli_query($con,"SELECT * FROM tb_admri WHERE berkas IS NULL ORDER BY id DESC");
 
 									if(mysqli_num_rows($result)>0){
 										while($row = mysqli_fetch_array($result))
@@ -158,7 +152,7 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Details Laboratorium</label>
+															<label class="modal-title">Details Administrasi Rawat Inap</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
@@ -167,27 +161,21 @@
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Laboratorium</h5>
+																		<h5>Gambar Administrasi Rawat Inap</h5>
 																		<hr>
 																		<?php
-																		if ($row['link_lab']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Laboratorium</i></b></font></h6>
+																		if ($row['link_admri']==NULL) { ?>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Administrasi Rawat Inap</i></b></font></h6>
 																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/laboratorium/'. $row['link_lab'];?>" class="lingkaran3" alt="User profile picture">   
+																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-inap/adm/'. $row['link_admri'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
 																	</div>
 																</div>
 																<hr>
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		<label>Judul</label>
-																		<input type="text" class="form-control" name="judul_lab" placeholder="Judul..." value="<?php echo $row['judul_lab'];?>">
-																	</div>
-																</div>
-																<div class="col-sm-12">
-																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_lab" placeholder="Isi..."><?php echo $row['isi_lab'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi..."><?php echo $row['isi_admri'];?></textarea>
 																	</div>
 																</div>
 															</div>
@@ -210,32 +198,32 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updategambarlab/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updategambaradmri/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Laboratorium</h5>
+																		<h5>Gambar Administrasi Rawat Inap</h5>
 																		<hr>
 																		<?php
-																		if ($row['link_lab']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Laboratorium</i></b></font></h6>
+																		if ($row['link_admri']==NULL) { ?>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Administrasi Rawat Inap</i></b></font></h6>
 																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/laboratorium/'. $row['link_lab'];?>" class="lingkaran3" alt="User profile picture">   
+																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-inap/adm/'. $row['link_admri'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
 																	</div>
 																</div>
 																<hr>
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		<label>Gambar Laboratorium</label>
-																		<input type="file" class="form-control" name="link_lab" value="<?php echo $row['link_lab'];?>">
+																		<label>Gambar Administrasi Rawat Inap</label>
+																		<input type="file" class="form-control" name="link_admri" value="<?php echo $row['link_admri'];?>">
 																		<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'];?>">
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updategambarlab" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updategambaradmri" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -250,29 +238,23 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Update Isi Laboratorium</label>
+															<label class="modal-title">Update Isi Administrasi Rawat Inap</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updateisilab/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateisiadmri/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		<label>Judul</label>
-																		<input type="text" class="form-control" name="judul_lab" placeholder="Judul..." value="<?php echo $row['judul_lab'];?>">
-																	</div>
-																</div>
-																<div class="col-sm-12">
-																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_lab" placeholder="Isi..."><?php echo $row['isi_lab'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi..."><?php echo $row['isi_admri'];?></textarea>
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateisilab" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updateisiadmri" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -293,13 +275,13 @@
 															</button>
 														</div>
 														<div class="modal-body">
-															<?php echo form_open_multipart(site_url('AdminPenunjangMedis/deletelab/'.$row['id'])); ?>
+															<?php echo form_open_multipart(site_url('AdminPelayananMedis/deleteadmri/'.$row['id'])); ?>
 															<div class="form-group">
 																<label>Anda yakin akan menghapus data ini?</label>
 																<input type="hidden" name="id" class="form-control" value="<?php echo $row['id'];?>" required>
 																<input type="hidden" name="berkas" class="form-control" value="HAPUS" required>
 															</div>
-															<button type="submit" name="deletelab" class="btn btn-danger btn-block btn-flat">Yes
+															<button type="submit" name="deleteadmri" class="btn btn-danger btn-block btn-flat">Yes
 															</button>
 															<button type="button" class="btn btn-warning btn-block btn-flat" data-dismiss="modal">
 																No
@@ -321,7 +303,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updatehiddenlab/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updatehiddenadmri/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -337,7 +319,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updatehiddenlab" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updatehiddenadmri" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>
@@ -357,7 +339,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPenunjangMedis/updateshowlab/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateshowadmri/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -373,7 +355,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateshowlab" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updateshowadmri" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>

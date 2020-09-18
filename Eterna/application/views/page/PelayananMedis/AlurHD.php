@@ -44,23 +44,6 @@
 							<?php } } mysqli_close($con); ?>
 							</div>
 							<br>
-							<hr>
-							<h2 class="entry-title">
-							<?php
-						    $con=mysqli_connect("localhost","root","","rskg_website");
-						    if (mysqli_connect_errno())
-						    {
-						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_alurhd WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
-
-						    if(mysqli_num_rows($result)>0){
-						        while($row = mysqli_fetch_array($result))
-						        {
-							?>
-								<a href=""><?php echo $row['judul_alurhd']; ?></a>
-							<?php } } mysqli_close($con); ?>
-							</h2>
 							<div class="entry-content">
 							<?php
 						    $con=mysqli_connect("localhost","root","","rskg_website");
@@ -74,7 +57,13 @@
 						        while($row = mysqli_fetch_array($result))
 						        {
 							?>
-							<?php echo $row['isi_alurhd']; ?>
+							<?php 
+								if ($row['isi_alurhd']==NULL) {
+									
+								}else{
+								echo $row['isi_alurhd'];
+								} 
+							?>
 							<?php } } mysqli_close($con); ?>
 							</div>
 							<div class="entry-footer clearfix">

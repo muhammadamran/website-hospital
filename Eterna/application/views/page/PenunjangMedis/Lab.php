@@ -110,7 +110,7 @@
 							<div class="sidebar-item categories">
 								<ul>
 									<li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexLab";?>"><font style="color: #28a745">Laboratorium </font></a></li>
-									<li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexAlurLab";?>">Alur Pelayanan Laboratorium </a></li>
+									<!-- <li><a href="<?php echo base_url()."index.php/WebPenunjangMedis/indexAlurLab";?>">Alur Pelayanan Laboratorium </a></li> -->
 								</ul>
 							</div>
 							<h3 class="sidebar-title">Pelayanan Medis</h3>

@@ -5,7 +5,7 @@ class AdminPenunjangMedis extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-
+		$this->load->model('M_MasterData');
 		if($this->session->userdata('status') != 'login'){
 			redirect('Admin');
 		}
@@ -90,7 +90,7 @@ class AdminPenunjangMedis extends CI_Controller {
 		}
 		$this->M_MasterData->input_igd('tb_farmasi', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
-		redirect('AdminPelayananMedis/indexFarmasi', $data);
+		redirect('AdminPenunjangMedis/indexFarmasi', $data);
 	}
 
 	private function _do_upload_farmasi()
@@ -104,7 +104,7 @@ class AdminPenunjangMedis extends CI_Controller {
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('link_farmasi')) {
 			$this->session->flasfarmasiata('flash', $this->upload->display_errors('',''));
-			redirect('AdminPelayananMedis/indexFarmasi');
+			redirect('AdminPenunjangMedis/indexFarmasi');
 		}
 		return $this->upload->data('file_name');
 	}
@@ -130,7 +130,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			$result= $this->M_MasterData->update_farmasi('tb_farmasi',$data, $id);
 			echo json_decode($result);
 		}
-		redirect('AdminPelayananMedis/indexFarmasi');
+		redirect('AdminPenunjangMedis/indexFarmasi');
 	}
 
 	// UPDATE
@@ -144,7 +144,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_farmasi('tb_farmasi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexFarmasi');	
+		redirect('AdminPenunjangMedis/indexFarmasi');	
 	}
 
 	// HAPUS FARMASI
@@ -157,7 +157,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_farmasi('tb_farmasi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexFarmasi');	
+		redirect('AdminPenunjangMedis/indexFarmasi');	
 	}
 
 	// HIDDEN FARMASI
@@ -170,7 +170,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_farmasi('tb_farmasi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexFarmasi');	
+		redirect('AdminPenunjangMedis/indexFarmasi');	
 	}
 
 	// SHOW FARMASI
@@ -183,7 +183,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_farmasi('tb_farmasi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexFarmasi');	
+		redirect('AdminPenunjangMedis/indexFarmasi');	
 	}
 ////////////////////////////////////END FARMASI//////////////////////////////
 
@@ -212,12 +212,12 @@ class AdminPenunjangMedis extends CI_Controller {
 		}
 		$this->M_MasterData->input_lab('tb_lab', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
-		redirect('AdminPelayananMedis/indexLab', $data);
+		redirect('AdminPenunjangMedis/indexLab', $data);
 	}
 
 	private function _do_upload_lab()
 	{
-		$config['upload_path'] 		= 'assets/images/rumah-sakit/lab/';
+		$config['upload_path'] 		= 'assets/images/rumah-sakit/laboratorium/';
 		$config['allowed_types'] 	= 'jpeg|jpg|png|pdf';
 		$config['max_size'] 		= 2000;
 		$config['encrypt_name'] 	= true;
@@ -226,7 +226,7 @@ class AdminPenunjangMedis extends CI_Controller {
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('link_lab')) {
 			$this->session->flashdata('flash', $this->upload->display_errors('',''));
-			redirect('AdminPelayananMedis/indexLab');
+			redirect('AdminPenunjangMedis/indexLab');
 		}
 		return $this->upload->data('file_name');
 	}
@@ -252,7 +252,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			$result= $this->M_MasterData->update_lab('tb_lab',$data, $id);
 			echo json_decode($result);
 		}
-		redirect('AdminPelayananMedis/indexLab');
+		redirect('AdminPenunjangMedis/indexLab');
 	}
 
 	// UPDATE
@@ -266,7 +266,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_lab('tb_lab',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexLab');	
+		redirect('AdminPenunjangMedis/indexLab');	
 	}
 
 	// HAPUS HD
@@ -279,7 +279,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_lab('tb_lab',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexLab');	
+		redirect('AdminPenunjangMedis/indexLab');	
 	}
 
 	// HIDDEN HD
@@ -292,7 +292,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_lab('tb_lab',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexLab');	
+		redirect('AdminPenunjangMedis/indexLab');	
 	}
 
 	// SHOW HD
@@ -305,7 +305,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_lab('tb_lab',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexLab');	
+		redirect('AdminPenunjangMedis/indexLab');	
 	}
 ////////////////////////////////////END LABORATORIUM//////////////////////////////
 
@@ -334,7 +334,7 @@ class AdminPenunjangMedis extends CI_Controller {
 		}
 		$this->M_MasterData->input_radiologi('tb_radiologi', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
-		redirect('AdminPelayananMedis/indexRadiologi', $data);
+		redirect('AdminPenunjangMedis/indexRadiologi', $data);
 	}
 
 	private function _do_upload_radiologi()
@@ -348,7 +348,7 @@ class AdminPenunjangMedis extends CI_Controller {
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('link_radiologi')) {
 			$this->session->flashdata('flash', $this->upload->display_errors('',''));
-			redirect('AdminPelayananMedis/indexRadiologi');
+			redirect('AdminPenunjangMedis/indexRadiologi');
 		}
 		return $this->upload->data('file_name');
 	}
@@ -374,7 +374,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			$result= $this->M_MasterData->update_radiologi('tb_radiologi',$data, $id);
 			echo json_decode($result);
 		}
-		redirect('AdminPelayananMedis/indexRadiologi');
+		redirect('AdminPenunjangMedis/indexRadiologi');
 	}
 
 	// UPDATE
@@ -388,7 +388,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_radiologi('tb_radiologi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexRadiologi');	
+		redirect('AdminPenunjangMedis/indexRadiologi');	
 	}
 
 	// HAPUS HD
@@ -401,7 +401,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_radiologi('tb_radiologi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexRadiologi');	
+		redirect('AdminPenunjangMedis/indexRadiologi');	
 	}
 
 	// HIDDEN HD
@@ -414,7 +414,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_radiologi('tb_radiologi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexRadiologi');	
+		redirect('AdminPenunjangMedis/indexRadiologi');	
 	}
 
 	// SHOW HD
@@ -427,7 +427,7 @@ class AdminPenunjangMedis extends CI_Controller {
 			);
 			$this->M_MasterData->update_radiologi('tb_radiologi',$data, $id);
 		} 
-		redirect('AdminPelayananMedis/indexRadiologi');	
+		redirect('AdminPenunjangMedis/indexRadiologi');	
 	}
 ////////////////////////////////////END RADIOLOGI//////////////////////////////
 }

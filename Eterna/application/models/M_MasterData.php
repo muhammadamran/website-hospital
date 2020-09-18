@@ -275,15 +275,16 @@ class M_MasterData extends CI_Model{
     }
 
 ///////////////////ADMINISTRASI////////////////////////////
-    // UPDATE DATA PELAYANAN MEDIS-RAWAT INAP
-    function update_admrj($table, $data)
+   function update_admrj($table,$data,$id)
     {
-        $this->db->insert($table,$data);
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
     }
 
-    function update_admri($table, $data)
+    function update_admri($table,$data,$id)
     {
-        $this->db->insert($table,$data);
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
     }
 ////////////////////TATA TERTIB////////////////////
     // UPDATE PELAYANAN MEDIS-RAWAT INAP

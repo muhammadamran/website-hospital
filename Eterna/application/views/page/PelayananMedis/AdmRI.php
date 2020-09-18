@@ -35,7 +35,7 @@
 							<?php
 							if ($row['link_admri']==NULL) {
 							?>
-								<img src="<?php echo base_url('assets/images/empty/img-empty.png');?>" alt="" class="img-fluid">
+								<!-- <img src="<?php echo base_url('assets/images/empty/img-empty.png');?>" alt="" class="img-fluid"> -->
 							<?php
 							}else{
 							?>
@@ -44,7 +44,6 @@
 							<?php } } mysqli_close($con); ?>
 							</div>
 							<br>
-							<hr>
 							<div class="entry-content">
 							<?php
 						    $con=mysqli_connect("localhost","root","","rskg_website");
