@@ -410,25 +410,32 @@
 					<h2>Pelayanan Kami</h2>
 				</div>
 				<div class="row">
-					<div class="col-lg-4">
+					<div class="col-lg-3">
 						<div class="icon-box">
 							<i class="icofont-computer"></i>
 							<h3><a href="">Lorem Ipsum</a></h3>
 							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 						</div>
 					</div>
-					<div class="col-lg-4 mt-4 mt-lg-0">
+					<div class="col-lg-3">
 						<div class="icon-box">
-							<i class="icofont-image"></i>
-							<h3><a href="">Dolor Sitema</a></h3>
-							<p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
+							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 						</div>
 					</div>
-					<div class="col-lg-4 mt-4 mt-lg-0">
+					<div class="col-lg-3">
 						<div class="icon-box">
-							<i class="icofont-tasks-alt"></i>
-							<h3><a href="">Sed ut perspiciatis</a></h3>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
+							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="icon-box">
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
+							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 						</div>
 					</div>
 				</div>
@@ -545,13 +552,13 @@
 			    {
 			        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			    }
-			    $result = mysqli_query($con,"SELECT * FROM tb_rekan WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+			    $result = mysqli_query($con,"SELECT * FROM tb_rekan ORDER BY id DESC");
 
 			    if(mysqli_num_rows($result)>0){
 			        while($row = mysqli_fetch_array($result))
 			        {
 				?>
-					<img src="<?php echo base_url('assets/img/clients/'.$row['rekan']);?>);?>" alt="">
+					<img src="<?php echo base_url('assets/img/clients/'.$row['rekan']);?>" alt="">
 				<?php } } mysqli_close($con); ?>
 				</div>
 			</div>

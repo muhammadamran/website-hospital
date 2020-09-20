@@ -28,6 +28,48 @@ class M_MasterData extends CI_Model{
         $this->db->insert($table,$data);
     }
 
+    // INPUT DATA JUDUL
+    function input_judul($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA SLIDER
+    function input_slider($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA LAYOUT 1
+    function input_layout_1($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA LAYOUT 2
+    function input_layout_2($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA PELAYANAN
+    function input_pelayanan($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA SPESIALIS
+    function input_spesialis($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA REKAN
+    function input_rekan($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
     // INPUT DATA PROFILE
     function input_profile($table, $data)
     {
@@ -155,15 +197,50 @@ class M_MasterData extends CI_Model{
         $this->db->insert($table,$data);
     }
 ////////////////////////////////////////////////UPDATE////////////////////////////////
-    // UPDATE SLIDE
-    function update_slide($table,$data,$id)
+    // UPDATE DATA JUDUL
+    function update_judul($table, $data)
     {
         $this->db->where('id', $id);
         $this->db->update($table,$data); 
     }
 
-    // UPDATE REKAN
-    function update_rekan($table,$data,$id)
+    // UPDATE DATA SLIDER
+    function update_slider($table, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE DATA LAYOUT 1
+    function update_layout_1($table, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE DATA LAYOUT 2
+    function update_layout_2($table, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE DATA PELAYANAN
+    function update_pelayanan($table, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE DATA SPESIALIS
+    function update_spesialis($table, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE DATA REKAN
+    function update_rekan($table, $data)
     {
         $this->db->where('id', $id);
         $this->db->update($table,$data); 
