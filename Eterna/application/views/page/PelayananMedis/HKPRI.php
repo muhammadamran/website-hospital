@@ -44,7 +44,6 @@
 							<?php } } mysqli_close($con); ?>
 							</div>
 							<br>
-							<hr>
 							<div class="entry-content">
 							<?php
 						    $con=mysqli_connect("localhost","root","","rskg_website");

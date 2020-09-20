@@ -1659,7 +1659,7 @@ class AdminPelayananMedis extends CI_Controller {
 			$upload = $this->_do_upload_ttri();
 			$data['link_ttri'] = $upload;
 		}
-		$this->M_MasterData->input_ri('tb_ttri', $data);
+		$this->M_MasterData->input_tt_ri('tb_ttri', $data);
 		$this->M_MasterData->input_wh('tb_warehouse', $data2);
 		redirect('AdminPelayananMedis/indexTTRI', $data);
 	}
