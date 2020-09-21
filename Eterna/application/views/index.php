@@ -414,35 +414,55 @@
 						<div class="icon-box">
 							<i class="icofont-computer"></i>
 							<h3><a href="">Lorem Ipsum</a></h3>
-							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 						</div>
 					</div>
 					<div class="col-lg-3">
 						<div class="icon-box">
 							<i class="icofont-computer"></i>
 							<h3><a href="">Lorem Ipsum</a></h3>
-							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 						</div>
 					</div>
 					<div class="col-lg-3">
 						<div class="icon-box">
 							<i class="icofont-computer"></i>
 							<h3><a href="">Lorem Ipsum</a></h3>
-							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
 						</div>
 					</div>
 					<div class="col-lg-3">
 						<div class="icon-box">
 							<i class="icofont-computer"></i>
 							<h3><a href="">Lorem Ipsum</a></h3>
-							<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="icon-box">
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="icon-box">
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="icon-box">
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="icon-box">
+							<i class="icofont-computer"></i>
+							<h3><a href="">Lorem Ipsum</a></h3>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- ======= Jumlah Section ======= -->
-		<section id="counts" class="counts" style="background-image: url(<?php echo base_url('theme/images/image_2.jpg');?>); background-repeat: no-repeat; background-position: center center;background-size: cover;padding: 0; margin-top: 5px; background: linear-gradient(to right, rgba(75, 123, 211, 0.5), rgba(22, 215, 177, 0.3)); ">
+		<!-- <section id="counts" class="counts" style="background-image: url(<?php echo base_url('theme/images/image_2.jpg');?>); background-repeat: no-repeat; background-position: center center;background-size: cover;padding: 0; margin-top: 5px; background: linear-gradient(to right, rgba(75, 123, 211, 0.5), rgba(22, 215, 177, 0.3)); ">
 			<br>
 			<br>
 			<br>
@@ -481,9 +501,9 @@
 			<br>
 			<br>
 			<br>
-		</section><!-- End Counts Section -->
+		</section>
 		<br>
-		<br>
+		<br> -->
 		<!-- ======= Berita & Acara Section ======= -->
 		<section id="clients" class="clients">
 			<div class="container">
@@ -552,7 +572,7 @@
 			    {
 			        echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			    }
-			    $result = mysqli_query($con,"SELECT * FROM tb_rekan ORDER BY id DESC");
+			    $result = mysqli_query($con,"SELECT * FROM tb_rekan WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
 			    if(mysqli_num_rows($result)>0){
 			        while($row = mysqli_fetch_array($result))

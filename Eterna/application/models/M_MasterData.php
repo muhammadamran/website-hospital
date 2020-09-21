@@ -29,7 +29,7 @@ class M_MasterData extends CI_Model{
     }
 
     // INPUT DATA JUDUL
-    function input_judul($table, $data)
+    function input_judulberanda($table, $data)
     {
         $this->db->insert($table,$data);
     }
@@ -197,50 +197,22 @@ class M_MasterData extends CI_Model{
         $this->db->insert($table,$data);
     }
 ////////////////////////////////////////////////UPDATE////////////////////////////////
-    // UPDATE DATA JUDUL
-    function update_judul($table, $data)
+    // UPDATE SLIDER
+    function update_judulberanda($table,$data,$id)
     {
         $this->db->where('id', $id);
         $this->db->update($table,$data); 
     }
 
-    // UPDATE DATA SLIDER
-    function update_slider($table, $data)
+    // UPDATE SLIDER
+    function update_sliderrs($table,$data,$id)
     {
         $this->db->where('id', $id);
         $this->db->update($table,$data); 
     }
 
-    // UPDATE DATA LAYOUT 1
-    function update_layout_1($table, $data)
-    {
-        $this->db->where('id', $id);
-        $this->db->update($table,$data); 
-    }
-
-    // UPDATE DATA LAYOUT 2
-    function update_layout_2($table, $data)
-    {
-        $this->db->where('id', $id);
-        $this->db->update($table,$data); 
-    }
-
-    // UPDATE DATA PELAYANAN
-    function update_pelayanan($table, $data)
-    {
-        $this->db->where('id', $id);
-        $this->db->update($table,$data); 
-    }
-
-    // UPDATE DATA SPESIALIS
-    function update_spesialis($table, $data)
-    {
-        $this->db->where('id', $id);
-        $this->db->update($table,$data); 
-    }
-
-    // UPDATE DATA REKAN
-    function update_rekan($table, $data)
+    // UPDATE REKAN
+    function update_mitrakami($table,$data,$id)
     {
         $this->db->where('id', $id);
         $this->db->update($table,$data); 

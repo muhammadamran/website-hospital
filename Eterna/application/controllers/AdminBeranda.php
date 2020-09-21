@@ -18,7 +18,86 @@ class AdminBeranda extends CI_Controller {
 		$this->load->view('protected/include/footer');
 		$this->load->view('protected/include/thirdparty');
 	}
-///////////////////////////////SLIDER///////////////////////////
+///////////////////////////////JUDUL///////////////////////////////
+	// INPUT DATA PROFILE
+	public function createjudul()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'judul_top' => $this->input->post('judul_top'),
+			'judul_bottom' => $this->input->post('judul_bottom'),
+			'letak' => $this->input->post('letak'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'JUDUL BERANDA'
+		);
+		
+		$this->M_MasterData->input_judulberanda('tb_judul', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminBeranda', $data);
+	}
+
+	// EDIT 
+	public function updateisijudul($id)
+	{
+		if(isset($_POST['updateisijudul']))
+		{	
+			$data = array(
+				'judul_top' => $this->input->post('judul_top'),
+				'judul_bottom' => $this->input->post('judul_bottom'),
+				'letak' => $this->input->post('letak')
+			);
+			$this->M_MasterData->update_judulberanda('tb_judul',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// HAPUS 
+	public function deletejudul($id)
+	{
+		if(isset($_POST['deletejudul']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_judulberanda('tb_judul',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// HIDDEN
+	public function updatehiddenjudul($id)
+	{
+		if(isset($_POST['updatehiddenjudul']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+
+			$this->M_MasterData->update_judulberanda('tb_judul',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// SHOW
+	public function updateshowjudul($id)
+	{
+		if(isset($_POST['updateshowjudul']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_judulberanda('tb_judul',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+///////////////////////////////SLIDER//////////////////////////////
 	// INPUT DATA PROFILE
 	public function createslider()
 	{
@@ -32,7 +111,7 @@ class AdminBeranda extends CI_Controller {
 			'kode' => $this->input->post('kode'),
 			'date_input' => date('Y-m-d H:i:s'),
 			'user_id' => $this->input->post('user_id'),
-			'modul' => 'SLIDER'
+			'modul' => 'SLIDER BERANDA'
 		);
 
 		if (!empty($_FILES['slider']['name'])) {
@@ -60,7 +139,7 @@ class AdminBeranda extends CI_Controller {
 		return $this->upload->data('file_name');
 	}
 
-	// GAMBAR slider
+	// GAMBAR
 	public function updategambarslider($id){
 
 		$config['upload_path']="assets/images/slide/";
@@ -78,13 +157,13 @@ class AdminBeranda extends CI_Controller {
 				'slider' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_slider('tb_slider',$data, $id);
+			$result= $this->M_MasterData->update_sliderrs('tb_slider',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminBeranda');
 	}
 
-	// HAPUS slider
+	// HAPUS 
 	public function deleteslider($id)
 	{
 		if(isset($_POST['deleteslider']))
@@ -92,12 +171,12 @@ class AdminBeranda extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_slider('tb_slider',$data, $id);
+			$this->M_MasterData->update_sliderrs('tb_slider',$data, $id);
 		} 
 		redirect('AdminBeranda');	
 	}
 
-	// HIDDEN slider
+	// HIDDEN
 	public function updatehiddenslider($id)
 	{
 		if(isset($_POST['updatehiddenslider']))
@@ -105,12 +184,13 @@ class AdminBeranda extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_slider('tb_slider',$data, $id);
+
+			$this->M_MasterData->update_sliderrs('tb_slider',$data, $id);
 		} 
 		redirect('AdminBeranda');	
 	}
 
-	// SHOW slider
+	// SHOW
 	public function updateshowslider($id)
 	{
 		if(isset($_POST['updateshowslider']))
@@ -118,12 +198,15 @@ class AdminBeranda extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_slider('tb_slider',$data, $id);
+			$this->M_MasterData->update_sliderrs('tb_slider',$data, $id);
 		} 
 		redirect('AdminBeranda');	
 	}
-
-///////////////////////////////REKANAN/MITRA///////////////////////////
+///////////////////////////////LAYOUT 1////////////////////////////
+///////////////////////////////LAYOUT 2////////////////////////////
+///////////////////////////////PELAYANAN///////////////////////////
+///////////////////////////////SPESIALIS///////////////////////////
+///////////////////////////////REKANAN/MITRA///////////////////////
 	// INPUT DATA PROFILE
 	public function createrekan()
 	{
@@ -180,10 +263,10 @@ class AdminBeranda extends CI_Controller {
 			$gambar= $file['file_name'];
 
 			$data = array(
-				'rekan' => $gambar
+				'rekan' => $gambar,
 			);
 
-			$result= $this->M_MasterData->update_rekan('tb_rekan',$data, $id);
+			$result= $this->M_MasterData->update_mitrakami('tb_rekan',$data, $id);
 			echo json_decode($result);
 		}
 		redirect('AdminBeranda');
@@ -197,7 +280,7 @@ class AdminBeranda extends CI_Controller {
 			$data = array(
 				'berkas' => $this->input->post('berkas')
 			);
-			$this->M_MasterData->update_rekan('tb_rekan',$data, $id);
+			$this->M_MasterData->update_mitrakami('tb_rekan',$data, $id);
 		} 
 		redirect('AdminBeranda');	
 	}
@@ -210,8 +293,8 @@ class AdminBeranda extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			// var_dump($data);exit();
-			$this->M_MasterData->update_rekan('tb_rekan',$data, $id);
+
+			$this->M_MasterData->update_mitrakami('tb_rekan',$data, $id);
 		} 
 		redirect('AdminBeranda');	
 	}
@@ -224,7 +307,7 @@ class AdminBeranda extends CI_Controller {
 			$data = array(
 				'status' => $this->input->post('status')
 			);
-			$this->M_MasterData->update_rekan('tb_rekan',$data, $id);
+			$this->M_MasterData->update_mitrakami('tb_rekan',$data, $id);
 		} 
 		redirect('AdminBeranda');	
 	}
