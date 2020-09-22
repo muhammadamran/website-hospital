@@ -342,30 +342,55 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<video width="100%" height="100%" controls><source src="<?php echo base_url('assets/vidio/profile.mp4') ?>" type="video/mp4">
-						</video>
-						<!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-						</iframe> -->
+						<?php
+					    $con=mysqli_connect("localhost","root","","rskg_website");
+					    if (mysqli_connect_errno())
+					    {
+					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					    }
+					    $result = mysqli_query($con,"SELECT * FROM tb_layoutone WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+
+					    if(mysqli_num_rows($result)>0){
+					        while($row = mysqli_fetch_array($result))
+					        {
+				        	$videoUrl = $row['isi_one'];
+						?>
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'.$videoUrl.'">
+						</iframe>
+						<?php } } mysqli_close($con); ?>
 					</div>
 					<div class="col-lg-6 pt-4 pt-lg-0 content">
+						<?php
+					    $con=mysqli_connect("localhost","root","","rskg_website");
+					    if (mysqli_connect_errno())
+					    {
+					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					    }
+					    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Layout 1' ORDER BY id DESC");
+
+					    if(mysqli_num_rows($result)>0){
+					        while($row = mysqli_fetch_array($result))
+					        {
+						?>
 						<div align="left">
-							<label><font style="font-family: Roboto; color: #3ca754"><b>Sejarah Singkat RS. Khusus Ginjal Ny. R.A. Habibie</b></font></label>
+							<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
 						</div>
-						<h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-						<p class="font-italic">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua.
-						</p>
-						<ul>
-							<li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-							<li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-							<li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-						</ul>
-						<p>
-							Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum
-						</p>
+						<h3><?php echo $row['judul_bottom']; ?></h3>
+						<?php } } mysqli_close($con); ?>
+						<?php
+					    $con=mysqli_connect("localhost","root","","rskg_website");
+					    if (mysqli_connect_errno())
+					    {
+					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					    }
+					    $result = mysqli_query($con,"SELECT * FROM tb_layoutone WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+
+					    if(mysqli_num_rows($result)>0){
+					        while($row = mysqli_fetch_array($result))
+					        {
+						?>
+						<?php echo $row['isi_one']; ?>
+						<?php } } mysqli_close($con); ?>
 					</div>
 				</div>
 			</div>
@@ -375,28 +400,60 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 pt-4 pt-lg-0 content">
+						<?php
+						$con=mysqli_connect("localhost","root","","rskg_website");
+					    if (mysqli_connect_errno())
+					    {
+					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					    }
+					    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Layout 2' ORDER BY id DESC");
+
+					    if(mysqli_num_rows($result)>0){
+					        while($row = mysqli_fetch_array($result))
+					        {
+						?>
 						<div align="left">
-							<label><font style="font-family: Roboto; color: #3ca754"><b>Tentang Kami</b></font></label>
+							<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
 						</div>
-						<h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-						<p class="font-italic">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua.
-						</p>
-						<ul>
-							<li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-							<li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-							<li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-						</ul>
-						<p>
-							Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum
-						</p>
+						<h3><?php echo $row['judul_bottom']; ?></h3>
+						<?php } } mysqli_close($con); ?>
+						<?php
+						$con=mysqli_connect("localhost","root","","rskg_website");
+					    if (mysqli_connect_errno())
+					    {
+					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					    }
+					    $result = mysqli_query($con,"SELECT * FROM tb_layouttwo WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+
+					    if(mysqli_num_rows($result)>0){
+					        while($row = mysqli_fetch_array($result))
+					        {
+						?>
+						<?php echo $row['isi_two']; ?>
+						<?php } } mysqli_close($con); ?>
 					</div>
+					<?php
+						$con=mysqli_connect("localhost","root","","rskg_website");
+					    if (mysqli_connect_errno())
+					    {
+					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+					    }
+					    $result = mysqli_query($con,"SELECT * FROM tb_layouttwo WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+
+					    if(mysqli_num_rows($result)>0){
+					        while($row = mysqli_fetch_array($result))
+					        {
+						?>
 					<div class="col-lg-6">
+						<?php
+						if ($row['link_two']==NULL) { 
+						?>
 						<img src="<?php echo base_url('assets/images/empty/img-empty.png');?>" class="img-fluid" alt="">
+						<?php }else{ ?>
+						<img src="<?php echo base_url('assets/images/layout2/'.$row['link_two']);?>" class="img-fluid" alt="">
+						<?php } ?>
 					</div>
+					<?php } } mysqli_close($con); ?>
 				</div>
 			</div>
 		</section>
@@ -404,10 +461,23 @@
 		<section id="featured" class="featured">
 			<div class="container">
 				<div class="section-title" data-aos="fade-up">
+					<?php
+					$con=mysqli_connect("localhost","root","","rskg_website");
+				    if (mysqli_connect_errno())
+				    {
+				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				    }
+				    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Pelayanan' ORDER BY id DESC");
+
+				    if(mysqli_num_rows($result)>0){
+				        while($row = mysqli_fetch_array($result))
+				        {
+					?>
 					<div align="center">
-						<label><font style="font-family: Roboto; color: #3ca754"><b>Tentang Kami</b></font></label>
+						<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
 					</div>
-					<h2>Pelayanan Kami</h2>
+					<h2><?php echo $row['judul_bottom']; ?></h2>
+					<?php } } mysqli_close($con); ?>
 				</div>
 				<div class="row">
 					<div class="col-lg-3">
@@ -461,57 +531,27 @@
 				</div>
 			</div>
 		</section>
-		<!-- ======= Jumlah Section ======= -->
-		<!-- <section id="counts" class="counts" style="background-image: url(<?php echo base_url('theme/images/image_2.jpg');?>); background-repeat: no-repeat; background-position: center center;background-size: cover;padding: 0; margin-top: 5px; background: linear-gradient(to right, rgba(75, 123, 211, 0.5), rgba(22, 215, 177, 0.3)); ">
-			<br>
-			<br>
-			<br>
-			<div class="container">
-				<div class="row no-gutters">
-					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-						<div class="count-box">
-							<i class="icofont-simple-smile"></i>
-							<span data-toggle="counter-up">232</span>
-							<p><strong>Happy Clients</strong> consequuntur quae qui deca rode</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-						<div class="count-box">
-							<i class="icofont-document-folder"></i>
-							<span data-toggle="counter-up">521</span>
-							<p><strong>Projects</strong> adipisci atque cum quia aut numquam delectus</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-						<div class="count-box">
-							<i class="icofont-live-support"></i>
-							<span data-toggle="counter-up">1,463</span>
-							<p><strong>Hours Of Support</strong> aut commodi quaerat. Aliquam ratione</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-						<div class="count-box">
-							<i class="icofont-users-alt-5"></i>
-							<span data-toggle="counter-up">15</span>
-							<p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br>
-			<br>
-			<br>
-		</section>
-		<br>
-		<br> -->
 		<!-- ======= Berita & Acara Section ======= -->
 		<section id="clients" class="clients">
 			<div class="container">
 				<div class="section-title">
+					<?php
+					$con=mysqli_connect("localhost","root","","rskg_website");
+				    if (mysqli_connect_errno())
+				    {
+				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				    }
+				    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Berita' ORDER BY id DESC");
+
+				    if(mysqli_num_rows($result)>0){
+				        while($row = mysqli_fetch_array($result))
+				        {
+					?>
 					<div align="center">
-						<label><font style="font-family: Roboto; color: #3ca754"><b>Berita & Acara</b></font></label>
+						<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
 					</div>
-					<h2>Seputar Kesehatan</h2>
+					<h2><?php echo $row['judul_bottom']; ?></h2>
+					<?php } } mysqli_close($con); ?>
 					<div class="row d-flex">
 						<div class="col-md-4 d-flex ftco-animate">
 							<div class="blog-entry align-self-stretch">
@@ -560,10 +600,23 @@
 		<section id="clients" class="clients">
 			<div class="container">
 				<div class="section-title">
+					<?php
+					$con=mysqli_connect("localhost","root","","rskg_website");
+				    if (mysqli_connect_errno())
+				    {
+				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				    }
+				    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Rekan' ORDER BY id DESC");
+
+				    if(mysqli_num_rows($result)>0){
+				        while($row = mysqli_fetch_array($result))
+				        {
+					?>
 					<div align="center">
-						<label><font style="font-family: Roboto; color: #3ca754"><b>Mitra</b></font></label>
+						<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
 					</div>
-					<h2>Rekanan</h2>
+					<h2><?php echo $row['judul_bottom']; ?></h2>
+					<?php } } mysqli_close($con); ?>
 				</div>
 				<div class="owl-carousel clients-carousel">
 				<?php

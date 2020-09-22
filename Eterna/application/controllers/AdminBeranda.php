@@ -203,7 +203,200 @@ class AdminBeranda extends CI_Controller {
 		redirect('AdminBeranda');	
 	}
 ///////////////////////////////LAYOUT 1////////////////////////////
+	// INPUT DATA PROFILE
+	public function createlyone()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'link_one' => $this->input->post('link_one'),
+			'isi_one' => $this->input->post('isi_one'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'LAYOUT 1 BERANDA'
+		);
+		
+		$this->M_MasterData->input_layout_1('tb_layoutone', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminBeranda', $data);
+	}
+
+	// EDIT 
+	public function updateisilyone($id)
+	{
+		if(isset($_POST['updateisilyone']))
+		{	
+			$data = array(
+				'link_one' => $this->input->post('link_one'),
+				'isi_one' => $this->input->post('isi_one')
+			);
+			$this->M_MasterData->update_layoutone('tb_layoutone',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// HAPUS 
+	public function deletelyone($id)
+	{
+		if(isset($_POST['deletelyone']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_layoutone('tb_layoutone',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// HIDDEN
+	public function updatehiddenlyone($id)
+	{
+		if(isset($_POST['updatehiddenlyone']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+
+			$this->M_MasterData->update_layoutone('tb_layoutone',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// SHOW
+	public function updateshowlyone($id)
+	{
+		if(isset($_POST['updateshowlyone']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_layoutone('tb_layoutone',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
 ///////////////////////////////LAYOUT 2////////////////////////////
+	// INPUT DATA PROFILE
+	public function createlytwo()
+	{
+		$data = array(
+			'kode' => $this->input->post('kode'),
+			'user_id' => $this->input->post('user_id'),
+			'isi_two' => $this->input->post('isi_two'),
+			'status' => $this->input->post('status')
+		);
+
+		$data2 = array(
+			'kode' => $this->input->post('kode'),
+			'date_input' => date('Y-m-d H:i:s'),
+			'user_id' => $this->input->post('user_id'),
+			'modul' => 'BERANDA LAYOUT 2'
+		);
+
+		if (!empty($_FILES['link_two']['name'])) {
+			$upload = $this->_do_upload_layouttwo();
+			$data['link_two'] = $upload;
+		}
+		$this->M_MasterData->input_layout_2('tb_layouttwo', $data);
+		$this->M_MasterData->input_wh('tb_warehouse', $data2);
+		redirect('AdminBeranda', $data);
+	}
+
+	private function _do_upload_layouttwo()
+	{
+		$config['upload_path'] 		= 'assets/images/layout2/';
+		$config['allowed_types'] 	= 'jpeg|jpg|png|pdf';
+		$config['max_size'] 		= 2000;
+		$config['encrypt_name'] 	= true;
+		
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('link_two')) {
+			$this->session->flashdata('flash', $this->upload->display_errors('',''));
+			redirect('AdminBeranda');
+		}
+		return $this->upload->data('file_name');
+	}
+
+	// GAMBAR HD
+	public function updategambarlytwo($id){
+
+		$config['upload_path']="assets/images/layout2/";
+		$config['allowed_types']='pdf|jpg|png|jpeg';
+		$config['max_size'] = '10000';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload',$config);
+		if($this->upload->do_upload("link_two")){
+			$file = $this->upload->data();
+			
+			$gambar= $file['file_name'];
+
+			$data = array(
+				'link_two' => $gambar,
+			);
+
+			$result= $this->M_MasterData->update_layouttwo('tb_layouttwo',$data, $id);
+			echo json_decode($result);
+		}
+		redirect('AdminBeranda');
+	}
+
+	// UPDATE
+	public function updateisilytwo($id)
+	{
+		if(isset($_POST['updateisilytwo']))
+		{	
+			$data = array(
+				'isi_two' => $this->input->post('isi_two')
+			);
+			$this->M_MasterData->update_layouttwo('tb_layouttwo',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// HAPUS HD
+	public function deletelytwo($id)
+	{
+		if(isset($_POST['deletelytwo']))
+		{	
+			$data = array(
+				'berkas' => $this->input->post('berkas')
+			);
+			$this->M_MasterData->update_layouttwo('tb_layouttwo',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// HIDDEN HD
+	public function updatehiddenlytwo($id)
+	{
+		if(isset($_POST['updatehiddenlytwo']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_layouttwo('tb_layouttwo',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
+
+	// SHOW HD
+	public function updateshowlytwo($id)
+	{
+		if(isset($_POST['updateshowlytwo']))
+		{	
+			$data = array(
+				'status' => $this->input->post('status')
+			);
+			$this->M_MasterData->update_layouttwo('tb_layouttwo',$data, $id);
+		} 
+		redirect('AdminBeranda');	
+	}
 ///////////////////////////////PELAYANAN///////////////////////////
 ///////////////////////////////SPESIALIS///////////////////////////
 ///////////////////////////////REKANAN/MITRA///////////////////////

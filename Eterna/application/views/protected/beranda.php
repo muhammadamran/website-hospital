@@ -75,12 +75,12 @@
 											<label>Posisi</label><font style="color: red"> *</font>
 											<select type="text" class="form-control" name="letak" required="required">
 												<option value="">-- Pilih Posisi --</option>
-												<option value="layout_1">Layout 1</option>
-												<option value="layout_2">Layout 2</option>
-												<option value="pelayanan">Pelayanan</option>
-												<option value="spesialis">Spesialis</option>
-												<option value="berita">Berita</option>
-												<option value="rekan">Rekan</option>
+												<option value="Layout 1">Layout 1</option>
+												<option value="Layout 2">Layout 2</option>
+												<option value="Pelayanan">Pelayanan</option>
+												<option value="Spesialis">Spesialis</option>
+												<option value="Berita">Berita</option>
+												<option value="Rekan">Rekan</option>
 											</select>
 										</div>
 									</div>	
@@ -117,6 +117,7 @@
 									<tr align="center" style="font-size: 14px">
 										<th class="text-nowrap">ID</th>
 										<th class="text-nowrap">Kode</th>
+										<th class="text-nowrap">Posisi</th>
 										<th class="text-nowrap">Details</th>
 										<th class="text-nowrap">Action</th>
 										<th class="text-nowrap">Berkas</th>
@@ -138,11 +139,12 @@
 											echo "<tr align='center' style='font-size: 14px;'>";
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
+											echo "<td>".$row['letak'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail-judul$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
+											<a href='#' data-toggle='modal' data-target='#detail-judul$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#isi-judul$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><small>Isi</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#isi-judul$row[id]' title='Judul One'><span class='btn btn-success btn-sm'><small>Edit</small></span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#delete-judul$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
@@ -173,19 +175,19 @@
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Judul Top</label>
-																		<textarea class="ckeditor" id="ckedtor" name="judul_top" placeholder="Judul Top..."><?php echo $row['judul_top'];?></textarea>
+																		<input type="text" class="form-control" placeholder="Judul Top..." name="judul_top" value="<?php echo $row['judul_top'] ?>">
 																	</div>
 																</div>
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Judul Bottom</label>
-																		<textarea class="ckeditor" id="ckedtor" name="judul_bottom" placeholder="Judul Bottom..."><?php echo $row['judul_bottom'];?></textarea>
+																		<input type="text" class="form-control" placeholder="Judul Bottom..." name="judul_bottom" value="<?php echo $row['judul_bottom'] ?>">
 																	</div>
 																</div>
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Posisi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="letak" placeholder="Posisi..."><?php echo $row['letak'];?></textarea>
+																		<input type="text" class="form-control" placeholder="Posisi..." name="letak" value="<?php echo $row['letak'] ?>">
 																	</div>
 																</div>
 															</div>
@@ -230,12 +232,12 @@
 																		<select type="text" class="form-control" name="letak" required="required">
 																			<option value="<?php echo $row['letak'] ?>"><?php echo $row['letak'] ?></option>
 																			<option value="">-- Pilih Posisi --</option>
-																			<option value="layout_1">Layout 1</option>
-																			<option value="layout_2">Layout 2</option>
-																			<option value="pelayanan">Pelayanan</option>
-																			<option value="spesialis">Spesialis</option>
-																			<option value="berita">Berita</option>
-																			<option value="rekan">Rekan</option>
+																			<option value="Layout 1">Layout 1</option>
+																			<option value="Layout 2">Layout 2</option>
+																			<option value="Pelayanan">Pelayanan</option>
+																			<option value="Spesialis">Spesialis</option>
+																			<option value="Berita">Berita</option>
+																			<option value="Rekan">Rekan</option>
 																		</select>
 																	</div>
 																</div>	
@@ -441,7 +443,7 @@
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail-slide$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
+											<a href='#' data-toggle='modal' data-target='#detail-slide$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#gambar-slide$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
@@ -648,6 +650,7 @@
 				</div>
 			</div>
 			<!-- END SLIDER -->
+			
 			<!-- LAYOUT -->
 			<div class="modal fade" id="modal-add-layoutone">
 				<div class="modal-dialog modal-xl">
@@ -658,7 +661,7 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form method="POST" action="<?php echo base_url() ?>index.php/AdminBeranda/createrekan" enctype="multipart/form-data">
+						<form method="POST" action="<?php echo base_url() ?>index.php/AdminBeranda/createlyone" enctype="multipart/form-data">
 							<div class="modal-body">
 								<div class="row">	
 									<div class="col-sm-12">
@@ -671,10 +674,16 @@
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Gambar Beranda</label>
-											<input type="file" class="form-control" name="rekan">
+											<label>Link YouTube<font style="color: red">*</font></label>
+											<input type="text" class="form-control" name="link_one" placeholder="Link YouTube..." required="required">
 										</div>
-									</div>	
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label>Isi Content<font style="color: red">*</font></label>
+											<textarea class="ckeditor" id="ckedtor" name="isi_one" placeholder="Isi Content..."></textarea>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-12">
@@ -696,7 +705,7 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form method="POST" action="<?php echo base_url() ?>index.php/AdminBeranda/createrekan" enctype="multipart/form-data">
+						<form method="POST" action="<?php echo base_url() ?>index.php/AdminBeranda/createlytwo" enctype="multipart/form-data">
 							<div class="modal-body">
 								<div class="row">	
 									<div class="col-sm-12">
@@ -709,10 +718,16 @@
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Gambar Beranda</label>
-											<input type="file" class="form-control" name="rekan">
+											<label>Gambar Layout</label>
+											<input type="file" class="form-control" name="link_two">
 										</div>
 									</div>	
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label>Isi Content<font style="color: red">*</font></label>
+											<textarea class="ckeditor" id="ckedtor" name="isi_two" placeholder="Isi Content..."></textarea>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-12">
@@ -769,28 +784,27 @@
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
+											<a href='#' data-toggle='modal' data-target='#detail-lyone$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td width='300px'>
-											<a href='#' data-toggle='modal' data-target='#gambar$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
-											<a href='#' data-toggle='modal' data-target='#isi$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><small>Isi</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#isi-lyone$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><small>Isi</small></span></a>
 											</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#delete$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#delete-lyone$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
 											</td>";
 											if ($row['status']=='SHOW') {
 												echo "<td>
-												<a href='#' data-toggle='modal' data-target='#hidden$row[id]' title='Edit'><span class='btn btn-success btn-sm'><i class='fas fa-check'></i></span></a>
+												<a href='#' data-toggle='modal' data-target='#hidden-lyone$row[id]' title='Edit'><span class='btn btn-success btn-sm'><i class='fas fa-check'></i></span></a>
 												</td>";
 											}else{
 												echo "<td>
-												<a href='#' data-toggle='modal' data-target='#show$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><i class='fas fa-times'></i></span></a>
+												<a href='#' data-toggle='modal' data-target='#show-lyone$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><i class='fas fa-times'></i></span></a>
 												</td>";
 											}
 											echo "</tr>";
 											?>
 											<!-- DETAILS -->
-											<div class="modal fade" id="detail<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="detail-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -802,22 +816,14 @@
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
-																	<div align="center">
-																		<h5>Gambar Beranda</h5>
-																		<hr>
-																		<?php
-																		if ($row['link_admri']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Beranda</i></b></font></h6>
-																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-inap/adm/'. $row['link_admri'];?>" class="lingkaran3" alt="User profile picture">   
-																		<?php } ?>
-																	</div>
+																	<iframe width="100%" height="100%" class="img-fluid" alt="" src="<?php echo $row['link_one']; ?>">
+																	</iframe>
 																</div>
 																<hr>
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi..."><?php echo $row['isi_admri'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_one" placeholder="Isi..."><?php echo $row['isi_one'];?></textarea>
 																	</div>
 																</div>
 															</div>
@@ -830,53 +836,8 @@
 											</div>
 											<!-- END DETAILS -->
 
-											<!-- GAMBAR -->
-											<div class="modal fade" id="gambar<?php echo $row['id'];?>" role="dialog">
-												<div class="modal-dialog modal-xl">
-													<div class="modal-content">
-														<div class="modal-header">
-															<label class="modal-title">Upload Gambar One</label>
-															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																<span aria-hidden="true">&times;</span>
-															</button>
-														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updategambaradmri/'.$row['id']));?>
-														<div class="modal-body">
-															<div class="row">
-																<div class="col-sm-12">
-																	<div align="center">
-																		<h5>Gambar Beranda</h5>
-																		<hr>
-																		<?php
-																		if ($row['link_admri']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Beranda</i></b></font></h6>
-																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-inap/adm/'. $row['link_admri'];?>" class="lingkaran3" alt="User profile picture">   
-																		<?php } ?>
-																	</div>
-																</div>
-																<hr>
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		<label>Gambar Beranda</label>
-																		<input type="file" class="form-control" name="link_admri" value="<?php echo $row['link_admri'];?>">
-																		<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'];?>">
-																	</div>
-																</div>
-															</div>
-															<div class="form-group">
-																<button type="submit" name="updategambaradmri" class="btn btn-block btn-primary">Update</button>
-																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
-															</div>
-														</div>
-													</form>
-												</div>
-												</div>
-											</div>
-											<!-- END GAMBAR -->
-
 											<!-- ISI-->
-											<div class="modal fade" id="isi<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="isi-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -885,18 +846,24 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateisiadmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updateisilyone/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
 																	<div class="form-group">
+																		<label>Link YouTube</label>
+																		<input type="text" name="link_one" class="form-control" value="<?php echo $row['link_one'];?>">
+																	</div>
+																</div>
+																<div class="col-sm-12">
+																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi..."><?php echo $row['isi_admri'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_one" placeholder="Isi..."><?php echo $row['isi_one'];?></textarea>
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateisiadmri" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updateisilyone" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -907,7 +874,7 @@
 											<!-- END ISI -->
 
 											<!-- DELETE -->
-											<div class="modal fade" id="delete<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="delete-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -917,13 +884,13 @@
 															</button>
 														</div>
 														<div class="modal-body">
-															<?php echo form_open_multipart(site_url('AdminPelayananMedis/deleteadmri/'.$row['id'])); ?>
+															<?php echo form_open_multipart(site_url('AdminBeranda/deletelyone/'.$row['id'])); ?>
 															<div class="form-group">
 																<label>Anda yakin akan menghapus data ini?</label>
 																<input type="hidden" name="id" class="form-control" value="<?php echo $row['id'];?>" required>
 																<input type="hidden" name="berkas" class="form-control" value="HAPUS" required>
 															</div>
-															<button type="submit" name="deleteadmri" class="btn btn-danger btn-block btn-flat">Yes
+															<button type="submit" name="deletelyone" class="btn btn-danger btn-block btn-flat">Yes
 															</button>
 															<button type="button" class="btn btn-warning btn-block btn-flat" data-dismiss="modal">
 																No
@@ -936,7 +903,7 @@
 											<!-- END DELETE -->
 
 											<!-- HIDE -->
-											<div class="modal fade" id="hidden<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="hidden-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -945,7 +912,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updatehiddenadmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updatehiddenlyone/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -961,7 +928,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updatehiddenadmri" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updatehiddenlyone" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>
@@ -972,7 +939,7 @@
 											<!-- END HIDE -->
 
 											<!-- SHOW -->
-											<div class="modal fade" id="show<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="show-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -981,7 +948,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateshowadmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updateshowlyone/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -997,7 +964,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateshowadmri" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updateshowlyone" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>
@@ -1056,32 +1023,32 @@
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
-											</td>";
-											echo "<td width='300px'>
-											<a href='#' data-toggle='modal' data-target='#gambar$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
-											<a href='#' data-toggle='modal' data-target='#isi$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><small>Isi</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#detail-lytwo$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#delete$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#gambar-lytwo$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><i class='fas fa-times'></i></span></a>
+											<a href='#' data-toggle='modal' data-target='#isi-lytwo$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><i class='fas fa-times'></i></span></a>
+											</td>";
+											echo "<td>
+											<a href='#' data-toggle='modal' data-target='#delete-lytwo$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
 											</td>";
 											if ($row['status']=='SHOW') {
 												echo "<td>
-												<a href='#' data-toggle='modal' data-target='#hidden$row[id]' title='Edit'><span class='btn btn-success btn-sm'><i class='fas fa-check'></i></span></a>
+												<a href='#' data-toggle='modal' data-target='#hidden-lytwo$row[id]' title='Edit'><span class='btn btn-success btn-sm'><i class='fas fa-check'></i></span></a>
 												</td>";
 											}else{
 												echo "<td>
-												<a href='#' data-toggle='modal' data-target='#show$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><i class='fas fa-times'></i></span></a>
+												<a href='#' data-toggle='modal' data-target='#show-lytwo$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><i class='fas fa-times'></i></span></a>
 												</td>";
 											}
 											echo "</tr>";
 											?>
 											<!-- DETAILS -->
-											<div class="modal fade" id="detail<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="detail-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Details Beranda</label>
+															<label class="modal-title">Details Layout 2</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
@@ -1090,13 +1057,13 @@
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Beranda</h5>
+																		<h5>Gambar Layout 2</h5>
 																		<hr>
 																		<?php
-																		if ($row['link_admri']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Beranda</i></b></font></h6>
+																		if ($row['link_two']==NULL) { ?>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Layout 2</i></b></font></h6>
 																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-inap/adm/'. $row['link_admri'];?>" class="lingkaran3" alt="User profile picture">   
+																			<img src="<?php echo base_url().'assets/images/layout2/'. $row['link_two'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
 																	</div>
 																</div>
@@ -1104,7 +1071,7 @@
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi..."><?php echo $row['isi_admri'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_two" placeholder="Isi..."><?php echo $row['isi_two'];?></textarea>
 																	</div>
 																</div>
 															</div>
@@ -1118,41 +1085,41 @@
 											<!-- END DETAILS -->
 
 											<!-- GAMBAR -->
-											<div class="modal fade" id="gambar<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="gambar-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Upload Gambar One</label>
+															<label class="modal-title">Upload Gambar Layout 2</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updategambaradmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updategambarlytwo/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Beranda</h5>
+																		<h5>Gambar Layout 2</h5>
 																		<hr>
 																		<?php
-																		if ($row['link_admri']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Beranda</i></b></font></h6>
+																		if ($row['link_two']==NULL) { ?>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Layout 2</i></b></font></h6>
 																		<?php }else{ ?>
-																			<img src="<?php echo base_url().'assets/images/rumah-sakit/rawat-inap/adm/'. $row['link_admri'];?>" class="lingkaran3" alt="User profile picture">   
+																			<img src="<?php echo base_url().'assets/images/layout2/'. $row['link_two'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
 																	</div>
 																</div>
 																<hr>
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		<label>Gambar Beranda</label>
-																		<input type="file" class="form-control" name="link_admri" value="<?php echo $row['link_admri'];?>">
+																		<label>Gambar Layout 2</label>
+																		<input type="file" class="form-control" name="link_two" value="<?php echo $row['link_two'];?>">
 																		<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'];?>">
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updategambaradmri" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updategambarlytwo" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -1163,27 +1130,27 @@
 											<!-- END GAMBAR -->
 
 											<!-- ISI-->
-											<div class="modal fade" id="isi<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="isi-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Update Isi Beranda</label>
+															<label class="modal-title">Update Isi Layout 2</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateisiadmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updateisilytwo/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
 																	<div class="form-group">
 																		<label>Isi</label>
-																		<textarea class="ckeditor" id="ckedtor" name="isi_admri" placeholder="Isi..."><?php echo $row['isi_admri'];?></textarea>
+																		<textarea class="ckeditor" id="ckedtor" name="isi_two" placeholder="Isi..."><?php echo $row['isi_two'];?></textarea>
 																	</div>
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateisiadmri" class="btn btn-block btn-primary">Update</button>
+																<button type="submit" name="updateisilytwo" class="btn btn-block btn-primary">Update</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">Close</button>
 															</div>
 														</div>
@@ -1194,7 +1161,7 @@
 											<!-- END ISI -->
 
 											<!-- DELETE -->
-											<div class="modal fade" id="delete<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="delete-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -1204,13 +1171,13 @@
 															</button>
 														</div>
 														<div class="modal-body">
-															<?php echo form_open_multipart(site_url('AdminPelayananMedis/deleteadmri/'.$row['id'])); ?>
+															<?php echo form_open_multipart(site_url('AdminBeranda/deletelytwo/'.$row['id'])); ?>
 															<div class="form-group">
 																<label>Anda yakin akan menghapus data ini?</label>
 																<input type="hidden" name="id" class="form-control" value="<?php echo $row['id'];?>" required>
 																<input type="hidden" name="berkas" class="form-control" value="HAPUS" required>
 															</div>
-															<button type="submit" name="deleteadmri" class="btn btn-danger btn-block btn-flat">Yes
+															<button type="submit" name="deletelytwo" class="btn btn-danger btn-block btn-flat">Yes
 															</button>
 															<button type="button" class="btn btn-warning btn-block btn-flat" data-dismiss="modal">
 																No
@@ -1223,7 +1190,7 @@
 											<!-- END DELETE -->
 
 											<!-- HIDE -->
-											<div class="modal fade" id="hidden<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="hidden-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -1232,7 +1199,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updatehiddenadmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updatehiddenlytwo/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -1248,7 +1215,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updatehiddenadmri" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updatehiddenlytwo" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>
@@ -1259,7 +1226,7 @@
 											<!-- END HIDE -->
 
 											<!-- SHOW -->
-											<div class="modal fade" id="show<?php echo $row['id'];?>" role="dialog">
+											<div class="modal fade" id="show-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
@@ -1268,7 +1235,7 @@
 																<span aria-hidden="true">&times;</span>
 															</button>
 														</div>
-														<?php echo form_open_multipart(site_url('AdminPelayananMedis/updateshowadmri/'.$row['id']));?>
+														<?php echo form_open_multipart(site_url('AdminBeranda/updateshowlytwo/'.$row['id']));?>
 														<div class="modal-body">
 															<div class="row">
 																<div class="col-sm-12">
@@ -1284,7 +1251,7 @@
 																</div>
 															</div>
 															<div class="form-group">
-																<button type="submit" name="updateshowadmri" class="btn btn-block btn-primary">Yes</button>
+																<button type="submit" name="updateshowlytwo" class="btn btn-block btn-primary">Yes</button>
 																<button type="button" class="btn btn-block btn-warning" data-dismiss="modal">No</button>
 															</div>
 														</div>
@@ -1384,7 +1351,7 @@
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
+											<a href='#' data-toggle='modal' data-target='#detail$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#gambar$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
@@ -1711,7 +1678,7 @@
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
+											<a href='#' data-toggle='modal' data-target='#detail$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#gambar$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
@@ -2038,7 +2005,7 @@
 											echo "<td>".$row['id'] . "</td>";
 											echo "<td>".$row['kode'] . "</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#detail-rekan$row[id]' title='Edit'><span class='btn btn-dark'><i class='fa fa-eye'></i> </span></a>
+											<a href='#' data-toggle='modal' data-target='#detail-rekan$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#gambar-rekan$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>

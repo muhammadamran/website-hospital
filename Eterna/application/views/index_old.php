@@ -112,6 +112,8 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<img src="<?php echo base_url('assets/img/about.jpg');?>" class="img-fluid" alt="">
+						<video width="100%" height="100%" controls><source src="<?php echo base_url('assets/vidio/profile.mp4') ?>" type="video/mp4">
+						</video>
 					</div>
 					<div class="col-lg-6 pt-4 pt-lg-0 content">
 						<h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>

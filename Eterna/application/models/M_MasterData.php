@@ -211,6 +211,20 @@ class M_MasterData extends CI_Model{
         $this->db->update($table,$data); 
     }
 
+    // UPDATE LAYOUT 1
+    function update_layoutone($table,$data,$id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE LAYOUT 2
+    function update_layouttwo($table,$data,$id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
     // UPDATE REKAN
     function update_mitrakami($table,$data,$id)
     {
