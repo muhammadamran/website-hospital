@@ -16,6 +16,30 @@ class M_MasterData extends CI_Model{
 ////////////////////////////////////////////////GET////////////////////////////////
 
 ////////////////////////////////////////////////INPUT////////////////////////////////
+    // INPUT DATA 
+    function input_karir($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA HUBUNGI
+    function input_hubungi($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA HUBUNGI
+    function input_faq($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    // INPUT DATA KONTAK KAMI
+    function input_kontakkami($table, $data)
+    {
+        $this->db->insert($table,$data);
+    }
+
     // INPUT DATA LOG
     function input_log($table, $data)
     {
@@ -197,6 +221,27 @@ class M_MasterData extends CI_Model{
         $this->db->insert($table,$data);
     }
 ////////////////////////////////////////////////UPDATE////////////////////////////////
+    // UPDATE KARIR
+    function update_karir_rs($table,$data,$id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE FAQ
+    function update_faq_rs($table,$data,$id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
+    // UPDATE KONTAK KAMI
+    function update_kontak_kami($table,$data,$id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update($table,$data); 
+    }
+
     // UPDATE SLIDER
     function update_judulberanda($table,$data,$id)
     {

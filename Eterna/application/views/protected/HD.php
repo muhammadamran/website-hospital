@@ -36,14 +36,14 @@
 				<li class="breadcrumb-item"><a href="javascript:;">Pelayanan Medis</a></li>
 				<li class="breadcrumb-item active">Pelayanan Medis Rumah Sakit Khusus Ginjal Ny. R.A. Habibie</li>
 			</ol>
-			<h1 class="page-header">Pelayanan Medis - Hemodialisis</h1>
+			<h1 class="page-header">Pelayanan Medis - Hemodialisa</h1>
 			<hr>
 			<!-- MODAL ADD -->
 			<div class="modal fade" id="modal-add">
 				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
-							<label class="modal-title">Add Profile Hemodialisis</label>
+							<label class="modal-title">Add Profile Hemodialisa</label>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -61,7 +61,7 @@
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Gambar Hemodialisis<font style="color: red">*</font></label>
+											<label>Gambar Hemodialisa<font style="color: red">*</font></label>
 											<input type="file" class="form-control" name="link_hd" required="required">
 										</div>
 									</div>	
@@ -73,8 +73,8 @@
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Isi Content Hemodialisis<font style="color: red">*</font></label>
-											<textarea class="ckeditor" id="ckedtor" name="isi_hd" placeholder="Isi Content Hemodialisis..."></textarea>
+											<label>Isi Content Hemodialisa<font style="color: red">*</font></label>
+											<textarea class="ckeditor" id="ckedtor" name="isi_hd" placeholder="Isi Content Hemodialisa..."></textarea>
 										</div>
 									</div>
 								</div>
@@ -94,7 +94,7 @@
 				<div class="col-xl-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">Table - Hemodialisis</h4>
+							<h4 class="panel-title">Table - Hemodialisa</h4>
 							<button class="btn bg-info btn-flat" data-toggle="modal" data-target="#modal-add" title="Tambah Agenda Rapat"><i class="nav-icon far fa-plus-square"></i> Add Profile Hemodiallisis
 							</button>
 							&nbsp;&nbsp;&nbsp;&nbsp;
@@ -158,7 +158,7 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Details Hemodialisis</label>
+															<label class="modal-title">Details Hemodialisa</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
@@ -167,11 +167,11 @@
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Hemodialisis</h5>
+																		<h5>Gambar Hemodialisa</h5>
 																		<hr>
 																		<?php
 																		if ($row['link_hd']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Hemodialisis</i></b></font></h6>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Hemodialisa</i></b></font></h6>
 																		<?php }else{ ?>
 																			<img src="<?php echo base_url().'assets/images/rumah-sakit/hd/'. $row['link_hd'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
@@ -215,11 +215,11 @@
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Hemodialisis</h5>
+																		<h5>Gambar Hemodialisa</h5>
 																		<hr>
 																		<?php
 																		if ($row['link_hd']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Hemodialisis</i></b></font></h6>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Hemodialisa</i></b></font></h6>
 																		<?php }else{ ?>
 																			<img src="<?php echo base_url().'assets/images/rumah-sakit/hd/'. $row['link_hd'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
@@ -228,7 +228,7 @@
 																<hr>
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		<label>Gambar Hemodialisis</label>
+																		<label>Gambar Hemodialisa</label>
 																		<input type="file" class="form-control" name="link_hd" value="<?php echo $row['link_hd'];?>">
 																		<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'];?>">
 																	</div>
@@ -250,7 +250,7 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Update Isi Hemodialisis</label>
+															<label class="modal-title">Update Isi Hemodialisa</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>

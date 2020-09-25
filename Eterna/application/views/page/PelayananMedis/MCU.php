@@ -6,8 +6,8 @@
 		<section id="breadcrumbs" class="breadcrumbs">
 			<div class="container">
 				<ol>
-					<li><a href="<?php echo base_url()."index.php/WebHome";?>">Home</a></li>
-					<li><a href="#">Pelayanan Medis</a></li>
+					<li><a href="<?php echo base_url()."index.php/WebHome";?>">Beranda</a></li>
+					<li>Pelayanan Medis</li>
 				</ol>
 				<h2>Medical Check Up</h2>
 			</div>
@@ -117,11 +117,11 @@
 							<h3 class="sidebar-title">Pelayanan Medis</h3>
 							<div class="sidebar-item categories">
 								<ul>
-									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>">Hemodialisis </a></li>
+									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>">Hemodialisa & CAPD </a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexIGD";?>">Instalasi Gawat Darurat (IGD) </a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexRJ";?>">Instalasi Rawat Jalan</a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexRI";?>">Instalasi Rawat Inap</a></li>
-									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexCAPD";?>">CAPD</a></li>
+									<!-- <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexCAPD";?>">CAPD</a></li> -->
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>">Pelyanan Bedah</a></li>
 									<li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexMCU";?>"><font style="color: #28a745">Medical Check Up</font></a></li>
 								</ul>
@@ -141,7 +141,7 @@
 							        while($row = mysqli_fetch_array($result))
 							        {
 								?>
-								<label><b><?php echo $row['label_kk']; ?></b></label> : <label><?php echo $row['isi_kk']; ?></label>
+								<label><b><?php echo $row['label_kk']; ?></b></label> : <label><?php echo $row['isi_kk']; ?></label><br>
 								<?php } } mysqli_close($con); ?>
 							</div>
 						</div>

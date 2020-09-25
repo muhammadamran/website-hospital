@@ -5,10 +5,10 @@
 		<section id="breadcrumbs" class="breadcrumbs">
 			<div class="container">
 				<ol>
-					<li><a href="index.html">Home</a></li>
-					<li>Portfolio</li>
+					<li><a href="<?php echo base_url()."index.php/WebHome";?>">Beranda</a></li>
+					<li>Informasi</li>
 				</ol>
-				<h2>Portfolio</h2>
+				<h2>Galeri</h2>
 			</div>
 		</section>
 		<section id="portfolio" class="portfolio">

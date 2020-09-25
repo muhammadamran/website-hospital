@@ -81,11 +81,12 @@
           <li class="has-sub">
             <a href="javascript:;">
               <b class="caret"></b>
-              Hemodialisa
+              Hemodialisa & CAPD
             </a>
             <ul class="sub-menu">
-              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexHD";?>">Tampilan Hemodialisis</a></li>
-              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurHD";?>">Alur Hemodialisis</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexHD";?>">Tampilan Hemodialisa & CAPD</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurHD";?>">Alur Hemodialisa</a></li>
+              <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurCAPD";?>">Alur CAPD</a></li>
             </ul>
           </li>
           <li class="has-sub">
@@ -122,7 +123,7 @@
               <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexHKPRI";?>">Hak & Kewajiaban Pasien Rawat Inap</a></li>
             </ul>
           </li>
-          <li class="has-sub">
+          <!-- <li class="has-sub">
             <a href="javascript:;">
               <b class="caret"></b>
               CAPD
@@ -131,7 +132,7 @@
               <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexCAPD";?>">Tampilan CAPD</a></li>
               <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexAlurCAPD";?>">Alur CAPD</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexBedah";?>">Pelayanan Bedah</a></li>
           <li><a href="<?php echo base_url()."index.php/AdminPelayananMedis/indexMCU";?>">Medical Check Up</a></li>
           <!-- <li class="has-sub">
@@ -214,11 +215,12 @@
         <ul class="sub-menu">
           <li><a href="<?php echo base_url()."index.php/AdminKontak/indexFAQ";?>">FAQ</a></li>
           <li><a href="<?php echo base_url()."index.php/AdminKontak/indexHubungi";?>">Hubungi</a></li>
+          <li><a href="<?php echo base_url()."index.php/AdminKontak/indexKontakKami";?>">Kontak Kami</a></li>
         </ul>
       </li>
       <!-- KARIR -->
       <li>
-        <a href="<?php echo base_url()."index.php/AdminKarir/indexFarmasi";?>">
+        <a href="<?php echo base_url()."index.php/AdminKarir";?>">
           <i class="fa fa-align-left"></i> 
           <span>Karir </span> 
         </a>

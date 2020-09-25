@@ -446,7 +446,7 @@
 											<a href='#' data-toggle='modal' data-target='#detail-slide$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#gambar-slide$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#gambar-slide$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><i class='fas fa-camera'></i></span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#delete-slide$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
@@ -787,7 +787,7 @@
 											<a href='#' data-toggle='modal' data-target='#detail-lyone$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td width='300px'>
-											<a href='#' data-toggle='modal' data-target='#isi-lyone$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><small>Isi</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#isi-lyone$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><i class='fas fa-bars'></i></span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#delete-lyone$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
@@ -1026,8 +1026,8 @@
 											<a href='#' data-toggle='modal' data-target='#detail-lytwo$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#gambar-lytwo$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><i class='fas fa-times'></i></span></a>
-											<a href='#' data-toggle='modal' data-target='#isi-lytwo$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><i class='fas fa-times'></i></span></a>
+											<a href='#' data-toggle='modal' data-target='#gambar-lytwo$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><i class='fas fa-camera'></i></span></a>
+											<a href='#' data-toggle='modal' data-target='#isi-lytwo$row[id]' title='Judul One'><span class='btn btn-dark btn-sm'><i class='fas fa-bars'></i></span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#delete-lytwo$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>
@@ -1270,7 +1270,7 @@
 			</div>
 			<!-- END LAYOUT -->
 			<!-- LAYOUT PELAYANAN -->
-			<div class="modal fade" id="modal-add-pelayanan">
+			<!-- <div class="modal fade" id="modal-add-pelayanan">
 				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -1371,7 +1371,6 @@
 											}
 											echo "</tr>";
 											?>
-											<!-- DETAILS -->
 											<div class="modal fade" id="detail<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1410,9 +1409,7 @@
 													</div>
 												</div>
 											</div>
-											<!-- END DETAILS -->
 
-											<!-- GAMBAR -->
 											<div class="modal fade" id="gambar<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1455,9 +1452,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END GAMBAR -->
 
-											<!-- ISI-->
 											<div class="modal fade" id="isi<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1486,9 +1481,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END ISI -->
 
-											<!-- DELETE -->
 											<div class="modal fade" id="delete<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog">
 													<div class="modal-content">
@@ -1515,9 +1508,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END DELETE -->
 
-											<!-- HIDE -->
 											<div class="modal fade" id="hidden<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1551,9 +1542,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END HIDE -->
 
-											<!-- SHOW -->
 											<div class="modal fade" id="show<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1587,17 +1576,16 @@
 												</div>
 												</div>
 											</div>
-											<!-- END SHOW -->
 									<?php } } mysqli_close($con); ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- END LAYOUT PELAYANAN -->
 			<!-- LAYOUT SPESIALIS -->
-			<div class="modal fade" id="modal-add-spesialis">
+			<!-- <div class="modal fade" id="modal-add-spesialis">
 				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -1698,7 +1686,6 @@
 											}
 											echo "</tr>";
 											?>
-											<!-- DETAILS -->
 											<div class="modal fade" id="detail<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1737,9 +1724,7 @@
 													</div>
 												</div>
 											</div>
-											<!-- END DETAILS -->
 
-											<!-- GAMBAR -->
 											<div class="modal fade" id="gambar<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1782,9 +1767,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END GAMBAR -->
 
-											<!-- ISI-->
 											<div class="modal fade" id="isi<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1813,9 +1796,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END ISI -->
 
-											<!-- DELETE -->
 											<div class="modal fade" id="delete<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog">
 													<div class="modal-content">
@@ -1842,9 +1823,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END DELETE -->
 
-											<!-- HIDE -->
 											<div class="modal fade" id="hidden<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1878,9 +1857,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END HIDE -->
 
-											<!-- SHOW -->
 											<div class="modal fade" id="show<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1914,14 +1891,13 @@
 												</div>
 												</div>
 											</div>
-											<!-- END SHOW -->
 									<?php } } mysqli_close($con); ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- END LAYOUT SPESIALIS -->
 			<!-- LAYOUT REKANAN -->
 			<div class="modal fade" id="modal-add-rekanan">
@@ -2008,7 +1984,7 @@
 											<a href='#' data-toggle='modal' data-target='#detail-rekan$row[id]' title='Edit'><span class='btn btn-dark btn-sm'><i class='fa fa-eye'></i> </span></a>
 											</td>";
 											echo "<td>
-											<a href='#' data-toggle='modal' data-target='#gambar-rekan$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><small>Gambar</small></span></a>
+											<a href='#' data-toggle='modal' data-target='#gambar-rekan$row[id]' title='Gambar'><span class='btn btn-dark btn-sm'><i class='fas fa-camera'></i></span></a>
 											</td>";
 											echo "<td>
 											<a href='#' data-toggle='modal' data-target='#delete-rekan$row[id]' title='Delete'><span class='btn btn-danger btn-sm'><small>Hapus</small></span></a>

@@ -90,9 +90,10 @@
         </li>
         <li class="drop-down"><a href="#"><b>Pelayanan Medis</b></a>
           <ul>
-            <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><b>Hemodialisis</b></a>
+            <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHD";?>"><b>Hemodialisa & CAPD</b></a>
               <ul>
-                <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurHD";?>"><b>Alur Pelayanan Hemodialisis</b></a></li>
+                <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurHD";?>"><b>Alur Pelayanan Hemodialisa</b></a></li>
+                <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurCAPD";?>"><b>Alur Pelayanan CAPD</b></a></li>
               </ul>
             </li>
             <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexIGD";?>"><b>IGD</b></a>
@@ -114,11 +115,11 @@
                 <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexHKPRI";?>"><b>Hak dan Kewajiban Pasien</b></a></li>
               </ul>
             </li>
-            <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexCAPD";?>"><b>CAPD</b></a>
+            <!-- <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexCAPD";?>"><b>CAPD</b></a>
               <ul>
                 <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexAlurCAPD";?>"><b>Alur Pelayanan CAPD</b></a></li>
               </ul>
-            </li>
+            </li> -->
             <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>"><b>Pelayanan Bedah</b></a></li>
             <li><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexMCU";?>"><b>Medical Check Up</b></a></li>
             <!-- <li class="drop-down"><a href="<?php echo base_url()."index.php/WebPelayananMedis/indexBedah";?>"><b>Bedah</b></a>

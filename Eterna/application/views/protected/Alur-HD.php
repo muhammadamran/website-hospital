@@ -36,14 +36,14 @@
 				<li class="breadcrumb-item"><a href="javascript:;">Pelayanan Medis</a></li>
 				<li class="breadcrumb-item active">Pelayanan Medis Rumah Sakit Khusus Ginjal Ny. R.A. Habibie</li>
 			</ol>
-			<h1 class="page-header">Pelayanan Medis - Alur Hemodialisis</h1>
+			<h1 class="page-header">Pelayanan Medis - Alur Hemodialisa</h1>
 			<hr>
 			<!-- MODAL ADD -->
 			<div class="modal fade" id="modal-add">
 				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
-							<label class="modal-title">Add Alur Hemodialisis</label>
+							<label class="modal-title">Add Alur Hemodialisa</label>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -61,14 +61,14 @@
 									</div>
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Gambar Alur Hemodialisis<font style="color: red">*</font></label>
+											<label>Gambar Alur Hemodialisa<font style="color: red">*</font></label>
 											<input type="file" class="form-control" name="alur_hd" required="required">
 										</div>
 									</div>	
 									<div class="col-sm-12">
 										<div class="form-group">
-											<label>Isi Content Alur Hemodialisis</label>
-											<textarea class="ckeditor" id="ckedtor" name="isi_alurhd" placeholder="Isi Content Alur Hemodialisis..."></textarea>
+											<label>Isi Content Alur Hemodialisa</label>
+											<textarea class="ckeditor" id="ckedtor" name="isi_alurhd" placeholder="Isi Content Alur Hemodialisa..."></textarea>
 										</div>
 									</div>
 								</div>
@@ -88,8 +88,8 @@
 				<div class="col-xl-12">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">Table - Alur Hemodialisis</h4>
-							<button class="btn bg-info btn-flat" data-toggle="modal" data-target="#modal-add" title="Tambah Agenda Rapat"><i class="nav-icon far fa-plus-square"></i> Add Alur Hemodialisis
+							<h4 class="panel-title">Table - Alur Hemodialisa</h4>
+							<button class="btn bg-info btn-flat" data-toggle="modal" data-target="#modal-add" title="Tambah Agenda Rapat"><i class="nav-icon far fa-plus-square"></i> Add Alur Hemodialisa
 							</button>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="panel-heading-btn">
@@ -152,7 +152,7 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Details Alur Hemodialisis</label>
+															<label class="modal-title">Details Alur Hemodialisa</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
@@ -161,11 +161,11 @@
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Alur Hemodialisis</h5>
+																		<h5>Gambar Alur Hemodialisa</h5>
 																		<hr>
 																		<?php
 																		if ($row['alur_hd']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Alur Hemodialisis</i></b></font></h6>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Alur Hemodialisa</i></b></font></h6>
 																		<?php }else{ ?>
 																			<img src="<?php echo base_url().'assets/images/rumah-sakit/hd/alur/'. $row['alur_hd'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
@@ -203,11 +203,11 @@
 															<div class="row">
 																<div class="col-sm-12">
 																	<div align="center">
-																		<h5>Gambar Alur Hemodialisis</h5>
+																		<h5>Gambar Alur Hemodialisa</h5>
 																		<hr>
 																		<?php
 																		if ($row['alur_hd']==NULL) { ?>
-																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Alur Hemodialisis</i></b></font></h6>
+																			<h6><font style="color: red"><b><i>Anda belum mengupload Gambar Alur Hemodialisa</i></b></font></h6>
 																		<?php }else{ ?>
 																			<img src="<?php echo base_url().'assets/images/rumah-sakit/hd/alur/'. $row['alur_hd'];?>" class="lingkaran3" alt="User profile picture">   
 																		<?php } ?>
@@ -216,7 +216,7 @@
 																<hr>
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		<label>Gambar Alur Hemodialisis</label>
+																		<label>Gambar Alur Hemodialisa</label>
 																		<input type="file" class="form-control" name="alur_hd" value="<?php echo $row['alur_hd'];?>">
 																		<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'];?>">
 																	</div>
@@ -238,7 +238,7 @@
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
 														<div class="modal-header">
-															<label class="modal-title">Update Isi Alur Hemodialisis</label>
+															<label class="modal-title">Update Isi Alur Hemodialisa</label>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>

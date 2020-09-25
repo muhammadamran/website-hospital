@@ -7,15 +7,15 @@
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
-    $result = mysqli_query($con,"SELECT * FROM tb_profile ORDER BY id DESC");
+    $result = mysqli_query($con,"SELECT * FROM tb_profile WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
 
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_array($result))
         {
 	?>
-  	<title><?php echo $row['title_head'];?></title>
-  	<!-- Favicons -->
-  	<link href="<?php echo base_url('assets/images/icon/'.$row['icon']);?>" rel="icon">
+	<title><?php echo $row['title_head'];?></title>
+	<!-- Favicons -->
+	<link href="<?php echo base_url('assets/images/icon/'.$row['icon']);?>" rel="icon">
 	<?php } } mysqli_close($con); ?>
 	<meta content="" name="descriptison">
 	<meta content="" name="keywords">

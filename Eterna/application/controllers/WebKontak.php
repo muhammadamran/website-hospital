@@ -27,4 +27,8 @@ class WebKontak extends CI_Controller {
 		$this->load->view('include/footer');
 		$this->load->view('include/thirdpart');
 	}
+
+	function indexHubungiThx(){
+		$this->load->view('page/Kontak/hubungithx');
+	}
 }

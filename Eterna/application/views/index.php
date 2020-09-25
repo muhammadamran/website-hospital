@@ -199,27 +199,27 @@
 			display: inline-flex !important; 
 		} 
 	}
-	.align-self-stretch 
-	{
-		-ms-flex-item-align: stretch !important;
-		-ms-grid-row-align: stretch !important;
-		align-self: stretch !important; 
-	}
+		.align-self-stretch 
+		{
+			-ms-flex-item-align: stretch !important;
+			-ms-grid-row-align: stretch !important;
+			align-self: stretch !important; 
+		}
 
 
-	.block-20 
-	{
-		overflow: hidden;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center center;
-		height: 250px;
-		position: relative;
-		display: block; 
-	}
+		.block-20 
+		{
+			overflow: hidden;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			height: 250px;
+			position: relative;
+			display: block; 
+		}
 
-	.blog-entry 
-	{
+		.blog-entry 
+		{
 		background: #fff;
 		-webkit-box-shadow: 0px 10px 18px -8px rgba(0, 0, 0, 0.1);
 		-moz-box-shadow: 0px 10px 18px -8px rgba(0, 0, 0, 0.1);
@@ -333,12 +333,41 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-	<br>
-	<br>
-	<br>
 	<main id="main">
+		<section id="featured" class="featured">
+			<div class="container">
+				<div class="icon-box">
+					<h3><font style="color: #23a843; font-family: Roboto">Cari Jadwal Dokter</font></h3>
+					<p><font style="font-family: Roboto; font-size: 17px">Cari dan temukan dokter yang tepat untuk kebutuhan medis Anda, dan buat janji dengan langkah mudah</font></p>
+					<hr>
+					<div class="row">
+						<div class="col-lg-4">
+							<select class="form-control" name="">
+								<option value="">-- Pilih Poliklinik --</option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+							</select>
+						</div>
+						<div class="col-lg-4">
+							<select class="form-control" name="">
+								<option value="">-- Pilih Dokter --</option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+							</select>
+						</div>
+						<div class="col-lg-4">
+							<button class="btn btn-success btn-block"><font></font><i class="fa fas fa-sreach"></i>Klik Disisni</button>
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</section>
+	    <!-- End Featured Section -->
 		<!-- ======= Sejarah Singkat RS. Khusus Ginjal Ny. R.A. Habibie Section ======= -->
-		<section id="about" class="about">
+		<!-- <section id="about" class="about">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -355,7 +384,7 @@
 					        {
 				        	$videoUrl = $row['isi_one'];
 						?>
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'.$videoUrl.'">
+						<iframe src="https://www.youtube.com/embed/'.$videoUrl.'">
 						</iframe>
 						<?php } } mysqli_close($con); ?>
 					</div>
@@ -394,9 +423,9 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- ======= Tentang Kami ======= -->
-		<section id="about" class="about">
+		<!-- <section id="about" class="about">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -456,7 +485,7 @@
 					<?php } } mysqli_close($con); ?>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- ======= Pelayanan Kami Section ======= -->
 		<section id="featured" class="featured">
 			<div class="container">
@@ -482,56 +511,119 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
+							<!-- <i class="icofont-computer"></i> -->
+							<img src="<?php echo base_url('assets/images/pelayanan/hd-128.png');?>">
+							<hr>
+							<h3><a href="">Hemodialisa</a></h3>
+							<hr>
 						</div>
 					</div>
 					<div class="col-lg-3">
 						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
+							<!-- <i class="icofont-computer"></i> -->
+							<img src="<?php echo base_url('assets/images/pelayanan/igd-hospital-128.png');?>">
+							<hr>
+							<h3><a href="">IGD</a></h3>
+							<hr>
 						</div>
 					</div>
 					<div class="col-lg-3">
 						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
+							<!-- <i class="icofont-computer"></i> -->
+							<img src="<?php echo base_url('assets/images/pelayanan/rawat-inap-128.png');?>">
+							<hr>
+							<h3><a href="">Rawat Inap</a></h3>
+							<hr>
 						</div>
 					</div>
 					<div class="col-lg-3">
 						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="icon-box">
-							<i class="icofont-computer"></i>
-							<h3><a href="">Lorem Ipsum</a></h3>
+							<!-- <i class="icofont-computer"></i> -->
+							<img src="<?php echo base_url('assets/images/pelayanan/rawat-jalan-128.png');?>">
+							<hr>
+							<h3><a href="">Rawat Jalan</a></h3>
+							<hr>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- ======= Berita & Acara Section ======= -->
+		<!-- ======= Spesialis ======= -->
+	    <section id="services" class="services">
+			<div class="container">
+				<div class="section-title" data-aos="fade-up">
+					<?php
+					$con=mysqli_connect("localhost","root","","rskg_website");
+				    if (mysqli_connect_errno())
+				    {
+				        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+				    }
+				    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Spesialis' ORDER BY id DESC");
+
+				    if(mysqli_num_rows($result)>0){
+				        while($row = mysqli_fetch_array($result))
+				        {
+					?>
+					<div align="center">
+						<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
+					</div>
+					<h2><?php echo $row['judul_bottom']; ?></h2>
+					<?php } } mysqli_close($con); ?>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/ginjal-hipertensi.png');?>"></div>
+							<h4><a href="">Klinik Spesialis Ginjal & Hipertensi (Konsultan)</a></h4>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-file"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/bedah.png');?>"></div>
+							<h4><a href="">Klinik Spesialis Bedah Vaskuler (Konsultan) One Day Surgery</a></h4>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-tachometer"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/penyakit-dalam.png');?>"></div>
+							<h4><a href="">Klinik Spesialis Penyakit Dalam</a></h4>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-world"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/paru.png');?>"></div>
+							<h4><a href="">Klinik Spesialis Paru</a></h4>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-slideshow"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/urologi.png');?>"></div>
+							<h4><a href="">Klinik Spesialis Urologi</a></h4>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-arch"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/klinik.png');?>"></div>
+							<h4><a href="">Klinik Umum (Sertifikat Dialisis)</a></h4>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-arch"></i></div> -->
+							<div class="icon"><img src="<?php echo base_url('assets/images/spesialis/gigi.png');?>"></div>
+							<h4><a href="">Klinik Gigi</a></h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	    <!-- ======= Berita & Acara Section ======= -->
 		<section id="clients" class="clients">
 			<div class="container">
 				<div class="section-title">
@@ -555,7 +647,7 @@
 					<div class="row d-flex">
 						<div class="col-md-4 d-flex ftco-animate">
 							<div class="blog-entry align-self-stretch">
-								<a href="blog-single.html" class="block-20 rounded" style="background-image: url(<?php echo base_url('theme/images/image_2.jpg');?>);">
+								<a href="blog-single.html" class="block-20 rounded" style="background-image: url(<?php echo base_url('assets/images/empty/img-empty.png');?>);">
 								</a>
 								<div class="text p-4">
 									<div class="meta mb-2">

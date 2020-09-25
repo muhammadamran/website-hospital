@@ -6,8 +6,8 @@
 		<section id="breadcrumbs" class="breadcrumbs">
 			<div class="container">
 				<ol>
-					<li><a href="<?php echo base_url()."index.php/WebHome";?>">Home</a></li>
-					<li><a href="#">Penunjang Medis</a></li>
+					<li><a href="<?php echo base_url()."index.php/WebHome";?>">Beranda</a></li>
+					<li>Penunjang Medis</li>
 				</ol>
 				<h2>Radiologi</h2>
 			</div>
