@@ -652,7 +652,7 @@
 			<!-- END SLIDER -->
 			
 			<!-- LAYOUT -->
-			<div class="modal fade" id="modal-add-layoutone">
+			<!-- <div class="modal fade" id="modal-add-layoutone">
 				<div class="modal-dialog modal-xl">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -741,7 +741,6 @@
 				</div>
 			</div>
 			<div class="row">
-				<!-- LAYOUT 1 -->
 				<div class="col-xl-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
@@ -803,7 +802,6 @@
 											}
 											echo "</tr>";
 											?>
-											<!-- DETAILS -->
 											<div class="modal fade" id="detail-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -834,9 +832,7 @@
 													</div>
 												</div>
 											</div>
-											<!-- END DETAILS -->
 
-											<!-- ISI-->
 											<div class="modal fade" id="isi-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -871,9 +867,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END ISI -->
 
-											<!-- DELETE -->
 											<div class="modal fade" id="delete-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog">
 													<div class="modal-content">
@@ -900,9 +894,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END DELETE -->
 
-											<!-- HIDE -->
 											<div class="modal fade" id="hidden-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -936,9 +928,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END HIDE -->
 
-											<!-- SHOW -->
 											<div class="modal fade" id="show-lyone<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -972,15 +962,12 @@
 												</div>
 												</div>
 											</div>
-											<!-- END SHOW -->
 									<?php } } mysqli_close($con); ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-				<!-- END LAYOUT 1 -->
-				<!-- LAYOUT 2 -->
 				<div class="col-xl-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
@@ -1043,7 +1030,6 @@
 											}
 											echo "</tr>";
 											?>
-											<!-- DETAILS -->
 											<div class="modal fade" id="detail-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1082,9 +1068,7 @@
 													</div>
 												</div>
 											</div>
-											<!-- END DETAILS -->
 
-											<!-- GAMBAR -->
 											<div class="modal fade" id="gambar-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1127,9 +1111,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END GAMBAR -->
 
-											<!-- ISI-->
 											<div class="modal fade" id="isi-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1158,9 +1140,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END ISI -->
 
-											<!-- DELETE -->
 											<div class="modal fade" id="delete-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog">
 													<div class="modal-content">
@@ -1187,9 +1167,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END DELETE -->
 
-											<!-- HIDE -->
 											<div class="modal fade" id="hidden-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1223,9 +1201,7 @@
 												</div>
 												</div>
 											</div>
-											<!-- END HIDE -->
 
-											<!-- SHOW -->
 											<div class="modal fade" id="show-lytwo<?php echo $row['id'];?>" role="dialog">
 												<div class="modal-dialog modal-xl">
 													<div class="modal-content">
@@ -1259,15 +1235,13 @@
 												</div>
 												</div>
 											</div>
-											<!-- END SHOW -->
 									<?php } } mysqli_close($con); ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-				<!-- END LAYOUT 2 -->
-			</div>
+			</div> -->
 			<!-- END LAYOUT -->
 			<!-- LAYOUT PELAYANAN -->
 			<!-- <div class="modal fade" id="modal-add-pelayanan">
