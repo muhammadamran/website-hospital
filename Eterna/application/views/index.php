@@ -366,126 +366,6 @@
 			</div>
 		</section>
 	    <!-- End Featured Section -->
-		<!-- ======= Sejarah Singkat RS. Khusus Ginjal Ny. R.A. Habibie Section ======= -->
-		<!-- <section id="about" class="about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<?php
-					    $con=mysqli_connect("localhost","root","","rskg_website");
-					    if (mysqli_connect_errno())
-					    {
-					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					    }
-					    $result = mysqli_query($con,"SELECT * FROM tb_layoutone WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
-
-					    if(mysqli_num_rows($result)>0){
-					        while($row = mysqli_fetch_array($result))
-					        {
-				        	$videoUrl = $row['isi_one'];
-						?>
-						<iframe src="https://www.youtube.com/embed/'.$videoUrl.'">
-						</iframe>
-						<?php } } mysqli_close($con); ?>
-					</div>
-					<div class="col-lg-6 pt-4 pt-lg-0 content">
-						<?php
-					    $con=mysqli_connect("localhost","root","","rskg_website");
-					    if (mysqli_connect_errno())
-					    {
-					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					    }
-					    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Layout 1' ORDER BY id DESC");
-
-					    if(mysqli_num_rows($result)>0){
-					        while($row = mysqli_fetch_array($result))
-					        {
-						?>
-						<div align="left">
-							<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
-						</div>
-						<h3><?php echo $row['judul_bottom']; ?></h3>
-						<?php } } mysqli_close($con); ?>
-						<?php
-					    $con=mysqli_connect("localhost","root","","rskg_website");
-					    if (mysqli_connect_errno())
-					    {
-					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					    }
-					    $result = mysqli_query($con,"SELECT * FROM tb_layoutone WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
-
-					    if(mysqli_num_rows($result)>0){
-					        while($row = mysqli_fetch_array($result))
-					        {
-						?>
-						<?php echo $row['isi_one']; ?>
-						<?php } } mysqli_close($con); ?>
-					</div>
-				</div>
-			</div>
-		</section> -->
-		<!-- ======= Tentang Kami ======= -->
-		<!-- <section id="about" class="about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 pt-4 pt-lg-0 content">
-						<?php
-						$con=mysqli_connect("localhost","root","","rskg_website");
-					    if (mysqli_connect_errno())
-					    {
-					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					    }
-					    $result = mysqli_query($con,"SELECT * FROM tb_judul WHERE status='SHOW' AND berkas IS NULL AND letak='Layout 2' ORDER BY id DESC");
-
-					    if(mysqli_num_rows($result)>0){
-					        while($row = mysqli_fetch_array($result))
-					        {
-						?>
-						<div align="left">
-							<label><font style="font-family: Roboto; color: #3ca754"><b><?php echo $row['judul_top']; ?></b></font></label>
-						</div>
-						<h3><?php echo $row['judul_bottom']; ?></h3>
-						<?php } } mysqli_close($con); ?>
-						<?php
-						$con=mysqli_connect("localhost","root","","rskg_website");
-					    if (mysqli_connect_errno())
-					    {
-					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					    }
-					    $result = mysqli_query($con,"SELECT * FROM tb_layouttwo WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
-
-					    if(mysqli_num_rows($result)>0){
-					        while($row = mysqli_fetch_array($result))
-					        {
-						?>
-						<?php echo $row['isi_two']; ?>
-						<?php } } mysqli_close($con); ?>
-					</div>
-					<?php
-						$con=mysqli_connect("localhost","root","","rskg_website");
-					    if (mysqli_connect_errno())
-					    {
-					        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					    }
-					    $result = mysqli_query($con,"SELECT * FROM tb_layouttwo WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
-
-					    if(mysqli_num_rows($result)>0){
-					        while($row = mysqli_fetch_array($result))
-					        {
-						?>
-					<div class="col-lg-6">
-						<?php
-						if ($row['link_two']==NULL) { 
-						?>
-						<img src="<?php echo base_url('assets/images/empty/img-empty.png');?>" class="img-fluid" alt="">
-						<?php }else{ ?>
-						<img src="<?php echo base_url('assets/images/layout2/'.$row['link_two']);?>" class="img-fluid" alt="">
-						<?php } ?>
-					</div>
-					<?php } } mysqli_close($con); ?>
-				</div>
-			</div>
-		</section> -->
 		<!-- ======= Pelayanan Kami Section ======= -->
 		<section id="featured" class="featured">
 			<div class="container">
@@ -623,6 +503,25 @@
 				</div>
 			</div>
 		</section>
+		<!-- ======= About Section ======= -->
+		<section id="about" class="about">
+			<div class="container">
+				<div class="section-title">
+					<div align="center">
+						<label><font style="font-family: Roboto; color: #3ca754"><b>Profile Rumah Sakit</b></font></label>
+					</div>
+					<h2>RS. Khusus Ginjal Ny. R.A. Habibie</h2>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<img src="<?php echo base_url('assets/img/about.jpg');?>" class="img-fluid" alt="">
+						<video width="100%" height="100%" controls><source src="<?php echo base_url('assets/vidio/profile.mp4') ?>" type="video/mp4">
+						</video>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ======= Services Section ======= -->
 	    <!-- ======= Berita & Acara Section ======= -->
 		<section id="clients" class="clients">
 			<div class="container">

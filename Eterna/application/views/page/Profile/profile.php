@@ -148,9 +148,26 @@
 							<?php echo $row['isi_1']; ?>
 							<?php } } mysqli_close($con); ?>
 							</div>
+							<?php
+						    $con=mysqli_connect("localhost","root","","rskg_website");
+						    if (mysqli_connect_errno())
+						    {
+						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+						    }
+						    $result = mysqli_query($con,"SELECT * FROM tb_rumahsakit WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
+
+						    if(mysqli_num_rows($result)>0){
+						        while($row = mysqli_fetch_array($result))
+						        {
+							?>
 							<div align="center">
-								<iframe controls><source src="<?php echo base_url('assets/vidio/profile.mp4') ?>" type="video/mp4"></iframe>
+								<!-- <iframe controls><source src="https://www.youtube.com/embed/<?php echo $row['link_2'];?>"></iframe> -->
+								<iframe id="ytplayer" type="text/html" width="720" height="405"
+								src="https://www.youtube.com/embed/<?php echo $row['link_2'];?>"
+								frameborder="0" allowfullscreen>
+								</iframe>
 							</div>
+							<?php } } mysqli_close($con); ?>
 							<hr>
 							<h2 class="entry-title">
 							<?php
