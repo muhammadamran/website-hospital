@@ -52,7 +52,24 @@
 		font-size: 28px;
 	}
 
-	.topright:hover {color: red;}
+	.topright:hover {
+		color: red;
+	}
+
+	/* Youtube Responsive */
+	.post-body iframe {width:100%!important;}
+	@media screen and (max-width:960px){
+	  .post-body iframe {max-height:90%}
+	}
+	@media screen and (max-width:768px){
+	  .post-body iframe {max-height:75%}
+	}
+	@media screen and (max-width:600px){
+	  .post-body iframe {max-height:60%}
+	}
+	@media screen and (max-width:480px){
+	  .post-body iframe {height:auto!important;max-height:auto!important}
+	}
 </style>
 <body>
 	<main id="main">
@@ -131,24 +148,8 @@
 							<?php echo $row['isi_1']; ?>
 							<?php } } mysqli_close($con); ?>
 							</div>
-							<hr>
 							<div align="center">
-								<!-- <img src="<?php echo base_url('assets/img/blog-1.jpg');?>" alt="" class="img-fluid"> -->
-							<?php
-						    $con=mysqli_connect("localhost","root","","rskg_website");
-						    if (mysqli_connect_errno())
-						    {
-						        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-						    }
-						    $result = mysqli_query($con,"SELECT * FROM tb_rumahsakit WHERE status='SHOW' AND berkas IS NULL ORDER BY id DESC");
-
-						    if(mysqli_num_rows($result)>0){
-						        while($row = mysqli_fetch_array($result))
-						        {
-							?>
-								<!-- <img src="<?php echo base_url('assets/images/rumah-sakit/'.$row['link_2']);?>" alt="" class="img-fluid"> -->
-							<iframe width="800px" height="500px" src="<?php echo $row['link_2']; ?>"></iframe>
-							<?php } } mysqli_close($con); ?>
+								<iframe controls><source src="<?php echo base_url('assets/vidio/profile.mp4') ?>" type="video/mp4"></iframe>
 							</div>
 							<hr>
 							<h2 class="entry-title">
@@ -288,5 +289,19 @@
 		</section>
 	</main>
 	<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+<script> //<![CDATA[
+/* Youtube Responsive by igniel.com */
+window.onload = function ignielYtube() {
+var youtube = $('iframe[src*="youtube.com"]');
+youtube.each(function() {
+$(this).attr('aspectRatio', this.height / this.width).attr('style', 'width:100%');
+});
+$(window).resize(function() {
+youtube.each(function() {
+$(this).attr('height', $(this).width() * $(this).attr('aspectRatio'));
+});
+}).resize();
+};
+//]]> </script>
 </body>
 </html>

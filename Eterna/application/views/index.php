@@ -358,7 +358,7 @@
 							</select>
 						</div>
 						<div class="col-lg-4">
-							<button class="btn btn-success btn-block"><font></font><i class="fa fas fa-sreach"></i>Klik Disisni</button>
+							<button class="btn btn-success btn-block"><img src="<?php echo base_url('assets/images/icon/search-1.png');?>"> Klik Disisni</button>
 						</div>
 					</div>
 					<hr>
